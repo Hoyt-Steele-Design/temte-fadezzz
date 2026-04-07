@@ -1,25 +1,28 @@
 {
-  "name": "temte-fadezzz",
-  "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
+  "name": "@keystatic/templates-astro",
+  "version": "0.0.63",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thinkmill/keystatic/",
+    "directory": "templates/astro"
+  },
+  "dependencies": {
+    "@astrojs/markdoc": "^0.12.9",
+    "@astrojs/react": "^4.2.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "astro": "^5.2.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@keystatic/astro": "^5.0.6",
+    "@keystatic/core": "^0.5.50"
   },
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
-  },
-  "dependencies": {
-    "@fontsource-variable/inter": "^5.2.8",
-    "@fontsource-variable/playfair-display": "^5.2.8",
-    "@tailwindcss/vite": "^4.2.1",
-    "astro": "^6.0.4",
-    "tailwindcss": "^4.2.1"
-  },
-  "devDependencies": {
-    "prettier-plugin-astro": "^0.14.1",
-    "supabase": "^2.82.0"
   }
 }
