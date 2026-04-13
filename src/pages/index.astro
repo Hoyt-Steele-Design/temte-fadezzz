@@ -1,22 +1,28 @@
 ---
 import "../styles/global.css";
+import heroBg from "../images/hero-mobile.jpg";
+import temte from "../images/temte-cropped.jpeg";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
-		<header>
-			<p>
-				<span class="large">TEMTE's</span>
-				<span class="small">Fades & Shaves</span>
-			</p>
+	<body class="max-w-screen-lg mx-auto">
+		<header class="flex justify-center p-4">
+			<a href="/" class="brand">
+				<span class="text-2xl font-bold">TEMTE's</span>
+				<span class="text-sm font-light tracking-tighter">Fades & Shaves</span>
+			</a>
+			<!-- Waffle Menu
 			<nav>
 				<button class="waffle-menu" aria-label="Open menu" aria-expanded="false">
 					<span></span>
@@ -31,23 +37,37 @@ import "../styles/global.css";
 					<li><a href="#location">Location</a></li>
 				</ul>
 			</nav>
+			-->
+
 		</header>
 
-		<section class="hero-sec">
-			<h1>Your Fade, Your Story</h1>
+		<section class="hero flex flex-col font-weight justify-center items-center p-8 min-h-screen gap-6" style={`background-image: url(${heroBg.src}); background-size: cover; background-position: center;`}>
+			<h1 class="text-5xl font-bold leading-tight text-white">Your Fade, <br>Your Story</h1>
+			<div class="flex flex-col items-center gap-3 text-white">
+				<a href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo" class="button font-inter text-sm font-semibold tracking-widest uppercase px-6 py-3 bg-gold text-black rounded-sm">Book Appointment</a>
+				<a href="#portfolio" class="button font-inter text-sm font-semibold tracking-widest uppercase px-6 py-3 border-2 border-current rounded-sm">View Portfolio</a>
+			</div>
 		</section>
 
-		<section class="about-me-sec">
-			<h2>Hi, I'm Temte</h2>
-			<p>
-				I specialize in fades, beard work, and detailed design cuts. I
-				also offer hot lather straight razor services, along with hot
-				wax and skincare treatments to elevate your experience. My goal
-				is simple: to give you a great conversation and a meticulously
-				detailed haircut that brings a new level of confidence. A cut
-				that looks sharp today — and stays easy to style and manage for
-				2–4 weeks after.
-			</p>
+		<section class="about-me p-4">
+			<div class="overflow-hidden h-[60vh] mb-2">
+				<img src={temte.src} alt="Temte" class="w-full h-full object-cover object-top" />
+			</div>
+			<div class="flex flex-col items-start justify-center p-2 gap-4 max-w-prose mx-auto">
+				<h2 class="text-4xl font-bold leading-tight tracking-tight self-center [word-spacing:-0.01em]">Hi, I'm Temte</h2>
+				<p class="tracking-tight leading-tight">
+					I specialize in fades, beard work, and detailed design cuts. I
+					also offer hot lather straight razor services, along with hot
+					wax and skincare treatments to elevate your experience.
+				</p>
+				<p class="tracking-tight leading-tight">
+					My goal is simple: to give you a great conversation and a meticulously
+					detailed haircut that brings a new level of confidence. A cut
+					that looks sharp today — and stays easy to style and manage for
+					2–4 weeks after.
+				</p>
+			</div>
+			</div>
 		</section>
 
 		<section class="portfolio"></section>
@@ -59,51 +79,59 @@ import "../styles/global.css";
 			<div class="service-group">
 				<h3>Haircuts</h3>
 				<div class="service-card">
-					<p>Service Name</p>
-					<p>Short description</p>
-					<p>$99</p>
+					<dl>
+						<dt>Service Name</dt>
+						<dd>Short description</dd>
+						<dd><data value="99">$99</data></dd>
+					</dl>
 				</div>
 			</div>
 			<div class="service-group">
 				<h3>Shaves</h3>
 				<div class="service-card">
-					<p>Service Name</p>
-					<p>Short description</p>
-					<p>$99</p>
+					<dl>
+						<dt>Service Name</dt>
+						<dd>Short description</dd>
+						<dd><data value="99">$99</data></dd>
+					</dl>
 				</div>
 			</div>
 			<div class="service-group">
 				<h3>Esthetician Work</h3>
 				<div class="service-card">
-					<p>Service Name</p>
-					<p>Short description</p>
-					<p>$99</p>
+					<dl>
+						<dt>Service Name</dt>
+						<dd>Short description</dd>
+						<dd><data value="99">$99</data></dd>
+					</dl>
 				</div>
 			</div>
 		</section>
 
-		<section class="location">
+		<section class="location flex flex-col">
 			<h2>Location</h2>
 			<p>8030 Glen Ln, Suite 18, Eden Prairie, 55344</p>
-			<button>Book Appointment</button>
-			<button>View Portfolio</button>
+			<a href="#book" class="button">Book Appointment</a>
+			<a href="#portfolio" class="button">View Portfolio</a>
 		</section>
 
 		<footer>
-			<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
-				<img src="" alt="Instagram" width="32" height="32" />
-			</a>
-			<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
-				<img src="" alt="Instagram" width="32" height="32" />
-			</a>
-			<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
-				<img src="" alt="Instagram" width="32" height="32" />
-			</a>
-			<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
-				<img src="" alt="Instagram" width="32" height="32" />
-			</a>
+			<div class="social-links">
+				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
+					<img src="" alt="Instagram" width="32" height="32" />
+				</a>
+				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
+					<img src="" alt="Instagram" width="32" height="32" />
+				</a>
+				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
+					<img src="" alt="Instagram" width="32" height="32" />
+				</a>
+				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
+					<img src="" alt="Instagram" width="32" height="32" />
+				</a>
+			</div>
 
-			<p>
+			<p class="footer-notice">
 				<span class="large">TEMTE's</span>
 				<span class="small">Fades & Shaves</span>
 			</p>
