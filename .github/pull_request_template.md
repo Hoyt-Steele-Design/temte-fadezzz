@@ -4,7 +4,7 @@
 Closes #
 
 ## Type of Change
-- [ ] Buf fix
+- [ ] Bug fix
 - [ ] New feature
 - [ ] Refactor
 - [ ] Docs / config
