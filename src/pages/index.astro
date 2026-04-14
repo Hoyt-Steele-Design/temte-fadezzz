@@ -1,8 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content'
+import Layout from '../layouts/Layout.astro'
 
-const posts = await getCollection('posts');
+const posts = await getCollection('posts')
 ---
 
 <Layout title="Keystatic & Astro's Content Collections">
@@ -18,7 +18,7 @@ const posts = await getCollection('posts');
     <h2>Posts</h2>
     <ul>
       {
-        posts.map(post => (
+        posts.map((post) => (
           <li>
             <a href={`/posts/${post.slug}`}>{post.data.title}</a>
           </li>
