@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --font-didot: 'GFS Didot', serif;
+  --font-inter: 'Inter', sans-serif;
+  --color-gold: #C4A84E;
+}
+
+body {
+  font-family: var(--font-didot);
+}
