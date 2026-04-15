@@ -21,7 +21,11 @@ import AboutMe from "../components/AboutMe.astro"
 	</head>
 	<body class="max-w-screen-lg mx-auto">
 		<Header />
-		<Hero heroBgImg={heroBgImg} />
+		<Hero
+    heroBgImg={heroBgImg}
+    primaryLink={{ href: "https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo", label: "Book Appointment" }}
+    secondaryLink={{ href: "#portfolio", label: "View Portfolio" }}
+  />
 		<AboutMe temteImg={temteImg} />
 
 		<section class="portfolio"></section>
