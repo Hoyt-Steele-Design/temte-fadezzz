@@ -1,29 +1,95 @@
 ---
-import { getCollection } from 'astro:content'
-import Layout from '../layouts/Layout.astro'
-
-const posts = await getCollection('posts')
+import "../styles/global.css";
+import heroBgImg from "../images/hero-mobile.jpg";
+import temteImg from "../images/temte-cropped.jpeg";
+import Hero from "../components/Hero.astro";
+import Header from "../components/Header.astro"
+import AboutMe from "../components/AboutMe.astro"
 ---
 
-<Layout title="Keystatic & Astro's Content Collections">
-  <div>
-    <h1>Keystatic ⚡️ + Astro 🚀</h1>
-    <p>
-      This homepage shows how to load data from Astro's content collections.
-    </p>
-    <p>
-      <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
-      below to view a post in the collection.
-    </p>
-    <h2>Posts</h2>
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-</Layout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body class="max-w-screen-lg mx-auto">
+		<Header />
+		<Hero heroBgImg={heroBgImg} />
+		<AboutMe temteImg={temteImg} />
+
+		<section class="portfolio"></section>
+
+		<section class="services">
+			<h2>Services</h2>
+			<p>Includes Wash/Lineup/Styling</p>
+
+			<div class="service-group">
+				<h3>Haircuts</h3>
+				<div class="service-card">
+					<dl>
+						<dt>Service Name</dt>
+						<dd>Short description</dd>
+						<dd><data value="99">$99</data></dd>
+					</dl>
+				</div>
+			</div>
+			<div class="service-group">
+				<h3>Shaves</h3>
+				<div class="service-card">
+					<dl>
+						<dt>Service Name</dt>
+						<dd>Short description</dd>
+						<dd><data value="99">$99</data></dd>
+					</dl>
+				</div>
+			</div>
+			<div class="service-group">
+				<h3>Esthetician Work</h3>
+				<div class="service-card">
+					<dl>
+						<dt>Service Name</dt>
+						<dd>Short description</dd>
+						<dd><data value="99">$99</data></dd>
+					</dl>
+				</div>
+			</div>
+		</section>
+
+		<section class="location flex flex-col">
+			<h2>Location</h2>
+			<p>8030 Glen Ln, Suite 18, Eden Prairie, 55344</p>
+			<a href="#book" class="button">Book Appointment</a>
+			<a href="#portfolio" class="button">View Portfolio</a>
+		</section>
+
+		<footer>
+			<div class="social-links">
+				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
+					<img src="" alt="Instagram" width="32" height="32" />
+				</a>
+				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
+					<img src="" alt="Instagram" width="32" height="32" />
+				</a>
+				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
+					<img src="" alt="Instagram" width="32" height="32" />
+				</a>
+				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
+					<img src="" alt="Instagram" width="32" height="32" />
+				</a>
+			</div>
+
+			<p class="footer-notice">
+				<span class="large">TEMTE's</span>
+				<span class="small">Fades & Shaves</span>
+			</p>
+
+		</footer>
+	</body>
+</html>
