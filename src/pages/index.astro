@@ -1,7 +1,10 @@
 ---
 import "../styles/global.css";
-import heroBg from "../images/hero-mobile.jpg";
-import temte from "../images/temte-cropped.jpeg";
+import heroBgImg from "../images/hero-mobile.jpg";
+import temteImg from "../images/temte-cropped.jpeg";
+import Hero from "../components/Hero.astro";
+import Header from "../components/Header.astro"
+import AboutMe from "../components/AboutMe.astro"
 ---
 
 <html lang="en">
@@ -17,58 +20,9 @@ import temte from "../images/temte-cropped.jpeg";
 		<title>Astro</title>
 	</head>
 	<body class="max-w-screen-lg mx-auto">
-		<header class="flex justify-center p-4">
-			<a href="/" class="brand">
-				<span class="text-2xl font-bold">TEMTE's</span>
-				<span class="text-sm font-light tracking-tighter">Fades & Shaves</span>
-			</a>
-			<!-- Waffle Menu
-			<nav>
-				<button class="waffle-menu" aria-label="Open menu" aria-expanded="false">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-				<ul class="nav-links">
-					<li><a href="#about">About</a></li>
-					<li><a href="#services">Services</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#location">Location</a></li>
-				</ul>
-			</nav>
-			-->
-
-		</header>
-
-		<section class="hero flex flex-col font-weight justify-center items-center p-8 min-h-screen gap-6" style={`background-image: url(${heroBg.src}); background-size: cover; background-position: center;`}>
-			<h1 class="text-5xl font-bold leading-tight text-white">Your Fade, <br>Your Story</h1>
-			<div class="flex flex-col items-center gap-3 text-white">
-				<a href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo" class="button font-inter text-sm font-semibold tracking-widest uppercase px-6 py-3 bg-gold text-black rounded-sm">Book Appointment</a>
-				<a href="#portfolio" class="button font-inter text-sm font-semibold tracking-widest uppercase px-6 py-3 border-2 border-current rounded-sm">View Portfolio</a>
-			</div>
-		</section>
-
-		<section class="about-me p-4">
-			<div class="overflow-hidden h-[60vh] mb-2">
-				<img src={temte.src} alt="Temte" class="w-full h-full object-cover object-top" />
-			</div>
-			<div class="flex flex-col items-start justify-center p-2 gap-4 max-w-prose mx-auto">
-				<h2 class="text-4xl font-bold leading-tight tracking-tight self-center [word-spacing:-0.01em]">Hi, I'm Temte</h2>
-				<p class="tracking-tight leading-tight">
-					I specialize in fades, beard work, and detailed design cuts. I
-					also offer hot lather straight razor services, along with hot
-					wax and skincare treatments to elevate your experience.
-				</p>
-				<p class="tracking-tight leading-tight">
-					My goal is simple: to give you a great conversation and a meticulously
-					detailed haircut that brings a new level of confidence. A cut
-					that looks sharp today — and stays easy to style and manage for
-					2–4 weeks after.
-				</p>
-			</div>
-			</div>
-		</section>
+		<Header />
+		<Hero heroBgImg={heroBgImg} />
+		<AboutMe temteImg={temteImg} />
 
 		<section class="portfolio"></section>
 
