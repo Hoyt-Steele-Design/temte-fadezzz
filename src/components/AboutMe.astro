@@ -1,0 +1,35 @@
+---
+const {
+  temteImg
+} = Astro.props;
+---
+
+<section class="about-me p-4">
+    <div class="overflow-hidden h-[60vh] mb-2">
+        <img
+            src={temteImg.src}
+            alt="Temte"
+            class="w-full h-full object-cover object-top"
+        />
+    </div>
+    <div
+        class="flex flex-col items-start justify-center p-2 gap-4 max-w-prose mx-auto"
+    >
+        <h2
+            class="text-4xl font-bold leading-tight tracking-tight self-center [word-spacing:-0.01em]"
+        >
+            Hi, I'm Temte
+        </h2>
+        <p class="tracking-tight leading-tight">
+            I specialize in fades, beard work, and detailed design cuts. I also
+            offer hot lather straight razor services, along with hot wax and
+            skincare treatments to elevate your experience.
+        </p>
+        <p class="tracking-tight leading-tight">
+            My goal is simple: to give you a great conversation and a
+            meticulously detailed haircut that brings a new level of confidence.
+            A cut that looks sharp today — and stays easy to style and manage
+            for 2–4 weeks after.
+        </p>
+    </div>
+</section>
