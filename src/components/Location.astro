@@ -1,0 +1,34 @@
+---
+import locationImg from "../images/location.jpg";
+---
+
+<section id="location" class="location flex flex-col">
+  <div class="relative mb-4">
+    <img
+      src={locationImg.src}
+      alt="Temte's Fades & Shaves location"
+      class="w-full h-64 object-cover object-[center_25%]"
+    />
+    <div class="absolute inset-0 flex flex-col justify-end items-start p-4 text-white">
+      <h2 class="text-4xl font-bold">Location</h2>
+      <p class="text-sm mt-1">8030 Glen Ln, Suite 18, Eden Prairie, 55344</p>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center gap-3 px-8">
+    <a
+      href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-64 text-center font-inter text-sm font-semibold tracking-widest uppercase px-6 py-3 bg-gold text-black rounded-sm"
+    >
+      Book Appointment
+    </a>
+    <a
+      href="#portfolio"
+      class="w-64 text-center font-inter text-sm font-semibold tracking-widest uppercase px-6 py-3 border-2 border-current rounded-sm mb-8"
+    >
+      View Portfolio
+    </a>
+  </div>
+</section>

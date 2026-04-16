@@ -5,6 +5,8 @@ import temteImg from "../images/temte-cropped.jpeg";
 import Hero from "../components/Hero.astro";
 import Header from "../components/Header.astro"
 import AboutMe from "../components/AboutMe.astro"
+import Location from "../components/Location.astro"
+import Footer from "../components/Footer.astro"
 ---
 
 <html lang="en">
@@ -66,34 +68,8 @@ import AboutMe from "../components/AboutMe.astro"
 			</div>
 		</section>
 
-		<section id="location" class="location flex flex-col">
-			<h2>Location</h2>
-			<p>8030 Glen Ln, Suite 18, Eden Prairie, 55344</p>
-			<a href="#book" class="button">Book Appointment</a>
-			<a href="#portfolio" class="button">View Portfolio</a>
-		</section>
+		<Location />
 
-		<footer>
-			<div class="social-links">
-				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
-					<img src="" alt="Instagram" width="32" height="32" />
-				</a>
-				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
-					<img src="" alt="Instagram" width="32" height="32" />
-				</a>
-				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
-					<img src="" alt="Instagram" width="32" height="32" />
-				</a>
-				<a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
-					<img src="" alt="Instagram" width="32" height="32" />
-				</a>
-			</div>
-
-			<p class="footer-notice">
-				<span class="large">TEMTE's</span>
-				<span class="small">Fades & Shaves</span>
-			</p>
-
-		</footer>
+		<Footer />
 	</body>
 </html>
