@@ -6,6 +6,10 @@
   --color-gold: #C4A84E;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-didot);
 }

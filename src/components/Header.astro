@@ -1,27 +1,61 @@
 ---
-
 ---
 
-<header class="flex justify-center p-4">
-			<a href="/" class="brand">
-				<span class="text-2xl font-bold">TEMTE's</span>
-				<span class="text-sm font-light tracking-tighter">Fades & Shaves</span>
-			</a>
-			<!-- Waffle Menu
-			<nav>
-				<button class="waffle-menu" aria-label="Open menu" aria-expanded="false">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-				<ul class="nav-links">
-					<li><a href="#about">About</a></li>
-					<li><a href="#services">Services</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#location">Location</a></li>
-				</ul>
-			</nav>
-			-->
+<header class="relative flex items-center justify-center p-4">
+  <button id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer" class="fixed top-4 left-4 z-50 flex flex-col gap-1.5 p-2 bg-white/40 backdrop-blur-sm rounded">
+    <span class="block w-6 h-0.5 bg-current"></span>
+    <span class="block w-6 h-0.5 bg-current"></span>
+    <span class="block w-6 h-0.5 bg-current"></span>
+  </button>
 
+  <a href="/" class="brand">
+    <span class="text-2xl font-bold tracking-tight">TEMTE's <span class="text-sm font-light">Fades & Shaves</span></span>
+  </a>
 </header>
+
+<dialog
+  id="nav-drawer"
+  class="fixed inset-y-0 right-0 m-0 h-screen max-h-screen w-[70%] max-w-sm bg-black text-white p-8
+         translate-x-full transition-transform duration-300 ease-in-out
+         open:translate-x-0 backdrop:bg-black/50"
+>
+  <button id="menu-close" aria-label="Close menu" class="ml-auto flex p-2 text-2xl leading-none">✕</button>
+
+  <nav class="mt-8" aria-label="Site navigation">
+    <ul class="flex flex-col gap-6 text-xl font-semibold tracking-widest uppercase">
+      <li><a href="#" onclick="document.getElementById('nav-drawer').close()">Home</a></li>
+      <li><a href="#about-me" onclick="document.getElementById('nav-drawer').close()">About</a></li>
+      <li><a href="#services" onclick="document.getElementById('nav-drawer').close()">Services</a></li>
+      <li><a href="#portfolio" onclick="document.getElementById('nav-drawer').close()">Portfolio</a></li>
+      <li><a href="#location" onclick="document.getElementById('nav-drawer').close()">Location</a></li>
+    </ul>
+  </nav>
+
+  <a
+    href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="mt-12 inline-block px-6 py-3 bg-gold text-black text-xs font-semibold tracking-widest uppercase font-inter rounded whitespace-nowrap"
+  >
+    Book Appointment
+  </a>
+</dialog>
+
+<script>
+  const drawer = document.getElementById('nav-drawer') as HTMLDialogElement;
+  const openBtn = document.getElementById('menu-open')!;
+  openBtn.addEventListener('click', () => {
+    drawer.showModal();
+    openBtn.setAttribute('aria-expanded', 'true');
+  });
+  const closeDrawer = () => {
+    drawer.close();
+    openBtn.setAttribute('aria-expanded', 'false');
+  };
+  document.getElementById('menu-close')!.addEventListener('click', closeDrawer);
+
+  drawer.addEventListener('click', (e) => {
+    if (e.target === drawer) closeDrawer();
+  });
+
+</script>
