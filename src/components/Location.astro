@@ -2,13 +2,14 @@
 import locationImg from "../images/location.jpg";
 ---
 
-<section id="location" class="location flex flex-col">
+<section id="location" class="location flex flex-col scroll-mt-16">
   <div class="relative mb-4">
     <img
       src={locationImg.src}
       alt="Temte's Fades & Shaves location"
       class="w-full h-64 object-cover object-[center_25%]"
     />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
     <div class="absolute inset-0 flex flex-col justify-end items-start p-4 text-white">
       <h2 class="text-4xl font-bold">Location</h2>
       <p class="text-sm mt-1">8030 Glen Ln, Suite 18, Eden Prairie, 55344</p>

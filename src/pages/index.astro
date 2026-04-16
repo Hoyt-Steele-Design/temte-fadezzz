@@ -21,7 +21,7 @@ import Footer from "../components/Footer.astro"
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="max-w-screen-lg mx-auto">
+	<body class="max-w-screen-lg mx-auto pt-16">
 		<Header />
 		<Hero
     heroBgImg={heroBgImg}
@@ -30,9 +30,11 @@ import Footer from "../components/Footer.astro"
   />
 		<AboutMe temteImg={temteImg} />
 
-		<section id="portfolio" class="portfolio"></section>
+		<section id="portfolio" class="portfolio py-12 text-center scroll-mt-16">
+			<h2 class="text-4xl font-bold tracking-tight">Portfolio</h2>
+		</section>
 
-		<section id="services" class="services">
+		<section id="services" class="services p-8 border border-current text-left mx-4 mb-4 scroll-mt-16">
 			<h2>Services</h2>
 			<p>Includes Wash/Lineup/Styling</p>
 
