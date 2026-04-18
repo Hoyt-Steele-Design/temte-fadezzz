@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Header from "../components/Header.astro"
 import AboutMe from "../components/AboutMe.astro"
+import Portfolio from "../components/Portfolio.astro"
 import Location from "../components/Location.astro"
 import Footer from "../components/Footer.astro"
 ---
@@ -13,9 +14,7 @@ import Footer from "../components/Footer.astro"
 	<Hero />
 	<AboutMe temteImg={temteImg} />
 
-	<section id="portfolio" class="portfolio py-12 text-center scroll-mt-16">
-		<h2 class="text-4xl font-bold tracking-tight">Portfolio</h2>
-	</section>
+	<Portfolio />
 
 	<section id="services" class="services p-8 border border-current text-left mx-4 mb-4 scroll-mt-16">
 		<h2>Services</h2>
