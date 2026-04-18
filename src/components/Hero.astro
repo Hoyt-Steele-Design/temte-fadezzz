@@ -1,31 +1,45 @@
 ---
 import { getImage } from 'astro:assets'
-import heroImg from '../images/hero-mobile.jpg'
+import heroMobileImg from '../images/hero-mobile.jpg'
+import heroDesktopImg from '../images/hero-desktop.jpeg'
 
-const optimizedImage = await getImage({ src: heroImg })
+const mobileImage = await getImage({ src: heroMobileImg })
+const desktopImage = await getImage({ src: heroDesktopImg })
 ---
 
 <div
-  class="flex min-h-screen flex-col items-center justify-center gap-8 [background-image:var(--bg-url)] bg-cover bg-center"
-  style={`--bg-url: url(${optimizedImage.src})`}
+  class="hero flex min-h-screen flex-col items-center justify-center gap-8 bg-cover bg-center"
+  style={`--bg-mobile: url(${mobileImage.src}); --bg-desktop: url(${desktopImage.src})`}
 >
   <div class="flex flex-col items-center text-center leading-tight">
-    <h1 class="font-garamond text-[2.25rem] lg:text-[4.5rem] text-white">Your Fade</h1>
-    <h1 class="font-garamond text-gold text-[3rem] lg:text-[6rem]">Your Story</h1>
+    <h1 class="font-garamond text-hero-title lg:text-hero-title-lg text-white">Your Fade</h1>
+    <h1 class="font-garamond text-hero-accent lg:text-hero-accent-lg text-gold">Your Story</h1>
   </div>
 
   <div class="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
     <a
       href="#"
-      class="bg-gold font-inter w-64 lg:w-auto rounded-sm px-6 lg:px-9 py-3 lg:py-[1.125rem] text-center text-sm lg:text-[1.3125rem] font-semibold tracking-widest text-white uppercase"
+      class="btn btn-gold w-64 px-6 py-3 lg:w-auto lg:px-9 lg:py-[1.125rem] lg:text-btn-lg"
     >
       Book Appointment
     </a>
     <a
       href="#"
-      class="font-inter w-64 lg:w-auto rounded-sm border-2 border-white px-6 lg:px-9 py-3 lg:py-[1.125rem] text-center text-sm lg:text-[1.3125rem] font-semibold tracking-widest text-white uppercase"
+      class="btn btn-ghost-white w-64 px-6 py-3 lg:w-auto lg:px-9 lg:py-[1.125rem] lg:text-btn-lg"
     >
       View Portfolio
     </a>
   </div>
 </div>
+
+<style>
+  .hero {
+    background-image: var(--bg-mobile);
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      background-image: var(--bg-desktop);
+    }
+  }
+</style>
