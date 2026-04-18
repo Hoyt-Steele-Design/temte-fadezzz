@@ -5,6 +5,7 @@ import Hero from "../components/Hero.astro";
 import Header from "../components/Header.astro"
 import AboutMe from "../components/AboutMe.astro"
 import Portfolio from "../components/Portfolio.astro"
+import Services from "../components/Services.astro"
 import Location from "../components/Location.astro"
 import Footer from "../components/Footer.astro"
 ---
@@ -16,41 +17,7 @@ import Footer from "../components/Footer.astro"
 
 	<Portfolio />
 
-	<section id="services" class="services p-8 border border-current text-left mx-4 mb-4 scroll-mt-16">
-		<h2>Services</h2>
-		<p>Includes Wash/Lineup/Styling</p>
-
-		<div class="service-group">
-			<h3>Haircuts</h3>
-			<div class="service-card">
-				<dl>
-					<dt>Service Name</dt>
-					<dd>Short description</dd>
-					<dd><data value="99">$99</data></dd>
-				</dl>
-			</div>
-		</div>
-		<div class="service-group">
-			<h3>Shaves</h3>
-			<div class="service-card">
-				<dl>
-					<dt>Service Name</dt>
-					<dd>Short description</dd>
-					<dd><data value="99">$99</data></dd>
-				</dl>
-			</div>
-		</div>
-		<div class="service-group">
-			<h3>Esthetician Work</h3>
-			<div class="service-card">
-				<dl>
-					<dt>Service Name</dt>
-					<dd>Short description</dd>
-					<dd><data value="99">$99</data></dd>
-				</dl>
-			</div>
-		</div>
-	</section>
+	<Services />
 
 	<Location />
 
