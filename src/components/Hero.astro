@@ -1,37 +1,45 @@
 ---
-const {
-  heroBgImg,
-  title = "Your Fade, Your Story",
-  primaryLink,
-  secondaryLink
-} = Astro.props;
+import { getImage } from 'astro:assets'
+import heroMobileImg from '../images/hero-mobile.jpg'
+import heroDesktopImg from '../images/hero-desktop.jpeg'
+
+const mobileImage = await getImage({ src: heroMobileImg })
+const desktopImage = await getImage({ src: heroDesktopImg })
 ---
 
-<section
-  class="hero flex flex-col font-weight justify-center items-center p-8 min-h-screen gap-6 mb-4"
-  style={`background-image: url(${heroBgImg.src}); background-size: cover; background-position: center;`}
+<div
+  class="hero flex min-h-screen flex-col items-center justify-center gap-8 bg-cover bg-center"
+  style={`--bg-mobile: url(${mobileImage.src}); --bg-desktop: url(${desktopImage.src})`}
 >
-  <h1 class="text-5xl font-bold leading-tight text-white">
-    {title.split(",")[0]}, <br />{title.split(",")[1]}
-  </h1>
-
-  <div class="flex flex-col items-center gap-3 text-white">
-    {primaryLink && (
-      <a
-        href={primaryLink.href}
-        class="button font-inter text-sm font-semibold tracking-widest uppercase px-6 py-3 bg-gold text-black rounded-sm w-64 text-center"
-      >
-        {primaryLink.label}
-      </a>
-    )}
-
-    {secondaryLink && (
-      <a
-        href={secondaryLink.href}
-        class="button font-inter text-sm font-semibold tracking-widest uppercase px-6 py-3 border-2 border-current rounded-sm w-64 text-center"
-      >
-        {secondaryLink.label}
-      </a>
-    )}
+  <div class="flex flex-col items-center text-center leading-tight">
+    <h1 class="font-garamond text-hero-title lg:text-hero-title-lg text-white">Your Fade</h1>
+    <h1 class="font-garamond text-hero-accent lg:text-hero-accent-lg text-gold">Your Story</h1>
   </div>
-</section>
+
+  <div class="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
+    <a
+      href="#"
+      class="btn btn-gold w-64 px-6 py-3 lg:w-auto lg:px-9 lg:py-[1.125rem] lg:text-btn-lg"
+    >
+      Book Appointment
+    </a>
+    <a
+      href="#"
+      class="btn btn-ghost-white w-64 px-6 py-3 lg:w-auto lg:px-9 lg:py-[1.125rem] lg:text-btn-lg"
+    >
+      View Portfolio
+    </a>
+  </div>
+</div>
+
+<style>
+  .hero {
+    background-image: var(--bg-mobile);
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      background-image: var(--bg-desktop);
+    }
+  }
+</style>

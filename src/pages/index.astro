@@ -1,7 +1,6 @@
 ---
-import "../styles/global.css";
-import heroBgImg from "../images/hero-mobile.jpg";
 import temteImg from "../images/temte-cropped.jpeg";
+import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Header from "../components/Header.astro"
 import AboutMe from "../components/AboutMe.astro"
@@ -9,69 +8,52 @@ import Location from "../components/Location.astro"
 import Footer from "../components/Footer.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="max-w-screen-lg mx-auto pt-16">
-		<Header />
-		<Hero
-    heroBgImg={heroBgImg}
-    primaryLink={{ href: "https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo", label: "Book Appointment" }}
-    secondaryLink={{ href: "#portfolio", label: "View Portfolio" }}
-  />
-		<AboutMe temteImg={temteImg} />
+<Layout title="Temte's Fades & Shaves">
+	<Header />
+	<Hero />
+	<AboutMe temteImg={temteImg} />
 
-		<section id="portfolio" class="portfolio py-12 text-center scroll-mt-16">
-			<h2 class="text-4xl font-bold tracking-tight">Portfolio</h2>
-		</section>
+	<section id="portfolio" class="portfolio py-12 text-center scroll-mt-16">
+		<h2 class="text-4xl font-bold tracking-tight">Portfolio</h2>
+	</section>
 
-		<section id="services" class="services p-8 border border-current text-left mx-4 mb-4 scroll-mt-16">
-			<h2>Services</h2>
-			<p>Includes Wash/Lineup/Styling</p>
+	<section id="services" class="services p-8 border border-current text-left mx-4 mb-4 scroll-mt-16">
+		<h2>Services</h2>
+		<p>Includes Wash/Lineup/Styling</p>
 
-			<div class="service-group">
-				<h3>Haircuts</h3>
-				<div class="service-card">
-					<dl>
-						<dt>Service Name</dt>
-						<dd>Short description</dd>
-						<dd><data value="99">$99</data></dd>
-					</dl>
-				</div>
+		<div class="service-group">
+			<h3>Haircuts</h3>
+			<div class="service-card">
+				<dl>
+					<dt>Service Name</dt>
+					<dd>Short description</dd>
+					<dd><data value="99">$99</data></dd>
+				</dl>
 			</div>
-			<div class="service-group">
-				<h3>Shaves</h3>
-				<div class="service-card">
-					<dl>
-						<dt>Service Name</dt>
-						<dd>Short description</dd>
-						<dd><data value="99">$99</data></dd>
-					</dl>
-				</div>
+		</div>
+		<div class="service-group">
+			<h3>Shaves</h3>
+			<div class="service-card">
+				<dl>
+					<dt>Service Name</dt>
+					<dd>Short description</dd>
+					<dd><data value="99">$99</data></dd>
+				</dl>
 			</div>
-			<div class="service-group">
-				<h3>Esthetician Work</h3>
-				<div class="service-card">
-					<dl>
-						<dt>Service Name</dt>
-						<dd>Short description</dd>
-						<dd><data value="99">$99</data></dd>
-					</dl>
-				</div>
+		</div>
+		<div class="service-group">
+			<h3>Esthetician Work</h3>
+			<div class="service-card">
+				<dl>
+					<dt>Service Name</dt>
+					<dd>Short description</dd>
+					<dd><data value="99">$99</data></dd>
+				</dl>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<Location />
+	<Location />
 
-		<Footer />
-	</body>
-</html>
+	<Footer />
+</Layout>

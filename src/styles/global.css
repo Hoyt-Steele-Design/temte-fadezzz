@@ -1,9 +1,32 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-didot: 'GFS Didot', serif;
+  --font-garamond: 'Cormorant Garamond', serif;
   --font-inter: 'Inter', sans-serif;
-  --color-gold: #C4A84E;
+  --color-gold: #c4a84e;
+
+  /* Hero headings */
+  --font-size-hero-title: 2.25rem;
+  --font-size-hero-title-lg: 4.5rem;
+  --font-size-hero-accent: 3rem;
+  --font-size-hero-accent-lg: 6rem;
+
+  /* Button */
+  --font-size-btn-lg: 1.3125rem;
+}
+
+@layer components {
+  .btn {
+    @apply font-inter rounded-sm text-center text-sm font-semibold tracking-widest uppercase;
+  }
+
+  .btn-gold {
+    @apply bg-gold text-white;
+  }
+
+  .btn-ghost-white {
+    @apply border-2 border-white text-white;
+  }
 }
 
 html {
@@ -11,5 +34,5 @@ html {
 }
 
 body {
-  font-family: var(--font-didot);
+  font-family: var(--font-garamond);
 }
