@@ -1,37 +1,31 @@
 ---
-const {
-  heroBgImg,
-  title = "Your Fade, Your Story",
-  primaryLink,
-  secondaryLink
-} = Astro.props;
+import { getImage } from 'astro:assets'
+import heroImg from '../images/hero-mobile.jpg'
+
+const optimizedImage = await getImage({ src: heroImg })
 ---
 
-<section
-  class="hero flex flex-col font-weight justify-center items-center p-8 min-h-screen gap-6 mb-4"
-  style={`background-image: url(${heroBgImg.src}); background-size: cover; background-position: center;`}
+<div
+  class="flex min-h-screen flex-col items-center justify-center gap-8 [background-image:var(--bg-url)] bg-cover bg-center"
+  style={`--bg-url: url(${optimizedImage.src})`}
 >
-  <h1 class="text-5xl font-bold leading-tight text-white">
-    {title.split(",")[0]}, <br />{title.split(",")[1]}
-  </h1>
-
-  <div class="flex flex-col items-center gap-3 text-white">
-    {primaryLink && (
-      <a
-        href={primaryLink.href}
-        class="button font-inter text-sm font-semibold tracking-widest uppercase px-6 py-3 bg-gold text-black rounded-sm w-64 text-center"
-      >
-        {primaryLink.label}
-      </a>
-    )}
-
-    {secondaryLink && (
-      <a
-        href={secondaryLink.href}
-        class="button font-inter text-sm font-semibold tracking-widest uppercase px-6 py-3 border-2 border-current rounded-sm w-64 text-center"
-      >
-        {secondaryLink.label}
-      </a>
-    )}
+  <div class="flex flex-col items-center text-center leading-tight">
+    <h1 class="font-garamond text-[2.25rem] lg:text-[4.5rem] text-white">Your Fade</h1>
+    <h1 class="font-garamond text-gold text-[3rem] lg:text-[6rem]">Your Story</h1>
   </div>
-</section>
+
+  <div class="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
+    <a
+      href="#"
+      class="bg-gold font-inter w-64 lg:w-auto rounded-sm px-6 lg:px-9 py-3 lg:py-[1.125rem] text-center text-sm lg:text-[1.3125rem] font-semibold tracking-widest text-white uppercase"
+    >
+      Book Appointment
+    </a>
+    <a
+      href="#"
+      class="font-inter w-64 lg:w-auto rounded-sm border-2 border-white px-6 lg:px-9 py-3 lg:py-[1.125rem] text-center text-sm lg:text-[1.3125rem] font-semibold tracking-widest text-white uppercase"
+    >
+      View Portfolio
+    </a>
+  </div>
+</div>

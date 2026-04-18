@@ -1,9 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-didot: 'GFS Didot', serif;
+  --font-garamond: 'Cormorant Garamond', serif;
   --font-inter: 'Inter', sans-serif;
-  --color-gold: #C4A84E;
+  --color-gold: #c4a84e;
+  --font-size-hero-sm: 2.25rem;
+  --font-size-hero-lg: 3rem;
 }
 
 html {
@@ -11,5 +13,5 @@ html {
 }
 
 body {
-  font-family: var(--font-didot);
+  font-family: var(--font-garamond);
 }
