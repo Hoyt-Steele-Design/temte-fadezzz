@@ -4,6 +4,7 @@
   --font-garamond: 'Cormorant Garamond', serif;
   --font-inter: 'Inter', sans-serif;
   --color-gold: #c4a84e;
+  --color-purple: #6B3FA0;
 
   /* Button */
   --font-size-btn-lg: 1.3125rem;
@@ -21,6 +22,18 @@
   .btn-ghost-white {
     @apply text-white;
     box-shadow: inset 0 0 0 2px white;
+  }
+
+  .btn-ghost {
+    @apply border-2 border-current;
+  }
+
+  .section-title {
+    @apply font-garamond text-4xl lg:text-5xl;
+  }
+
+  .section-divider {
+    @apply mx-auto mt-3 h-px w-12 bg-gold;
   }
 }
 
