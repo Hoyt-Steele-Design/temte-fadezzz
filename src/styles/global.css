@@ -19,7 +19,8 @@
   }
 
   .btn-ghost-white {
-    @apply border-2 border-white text-white;
+    @apply text-white;
+    box-shadow: inset 0 0 0 2px white;
   }
 }
 

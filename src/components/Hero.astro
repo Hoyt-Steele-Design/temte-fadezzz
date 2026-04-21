@@ -8,14 +8,24 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 ---
 
 <div
-  class="hero flex min-h-screen flex-col items-center justify-center gap-8 bg-cover bg-center mb-8 lg:mb-16"
+  class="hero relative flex min-h-screen flex-col items-center justify-start pt-48 lg:justify-center lg:pt-0 gap-12 bg-cover bg-center mb-8 lg:mb-16"
   style={`--bg-mobile: url(${mobileImage.src}); --bg-desktop: url(${desktopImage.src})`}
 >
-  <div class="flex flex-col items-center justify-center gap-8 w-full px-8">
-  <div class="flex flex-col items-center text-center">
-    <h1 class="font-garamond hero-title text-white leading-none font-semibold">Your Fade</h1>
-    <div class="w-12 lg:w-24 h-px bg-gold mt-4 lg:mt-6 mb-2" style="box-shadow: 0 0 4px 1px rgba(196,168,78,0.35)"></div>
-    <h1 class="font-garamond hero-accent text-gold leading-none font-semibold">Your Story</h1>
+  <div class="absolute inset-0 bg-linear-to-b from-transparent to-black/10 pointer-events-none"></div>
+  <div class="relative z-10 flex flex-col items-center gap-12 px-8">
+  <div class="flex flex-row items-stretch hero-diagonal">
+    <div class="flex items-center justify-start hero-fade-left">
+      <h1 class="font-garamond hero-title text-2xl text-white leading-none font-bold whitespace-nowrap">Your Fade</h1>
+    </div>
+    <div class="flex items-center justify-center px-4 hero-fade-center">
+      <div class="hero-x-container">
+        <div class="hero-slash-line hero-slash-line--pos"></div>
+        <div class="hero-slash-line hero-slash-line--neg"></div>
+      </div>
+    </div>
+    <div class="flex items-center justify-end hero-fade-right">
+      <h1 class="font-garamond hero-accent text-2xl text-gold leading-none font-bold whitespace-nowrap">Your Story</h1>
+    </div>
   </div>
 
   <div class="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
@@ -23,13 +33,13 @@ const desktopImage = await getImage({ src: heroDesktopImg })
       href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
       target="_blank"
       rel="noopener noreferrer"
-      class="btn btn-gold w-64 px-6 py-3 lg:w-auto lg:px-9 lg:py-[1.125rem] lg:text-btn-lg"
+      class="btn btn-gold w-full max-w-[16rem] px-6 py-3 lg:w-auto lg:max-w-none lg:px-9 lg:py-4.5 lg:text-btn-lg"
     >
       Book Appointment
     </a>
     <a
       href="#portfolio"
-      class="btn btn-ghost-white w-64 px-6 py-3 lg:w-auto lg:px-9 lg:py-[1.125rem] lg:text-btn-lg"
+      class="btn btn-ghost-white w-full max-w-[16rem] px-6 py-3 lg:w-auto lg:max-w-none lg:px-9 lg:py-4.5 lg:text-btn-lg"
     >
       View Portfolio
     </a>
@@ -49,14 +59,76 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   }
 
   .hero-title {
-    font-size: clamp(2.75rem, 5vw, 4.5rem);
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    font-size: clamp(1.5rem, 7vw, 3.5rem);
+    text-shadow: 0 2px 16px rgba(0,0,0,0.8);
     -webkit-text-stroke: 0.3px rgba(255,255,255,0.3);
   }
 
   .hero-accent {
-    font-size: clamp(3.75rem, 6.5vw, 6rem);
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    -webkit-text-stroke: 0.3px rgba(196,168,78,0.3);
+    font-size: clamp(1.5rem, 7vw, 3.5rem);
+    text-shadow: 0 2px 16px rgba(0,0,0,0.8), 0 0 8px rgba(196,168,78,0.7);
+    -webkit-text-stroke: 0.6px rgba(196,168,78,0.6);
+  }
+
+  .hero-diagonal {
+    height: 5rem;
+  }
+
+  .hero-x-container {
+    position: relative;
+    width: 20px;
+    height: 110%;
+  }
+
+  .hero-slash-line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    background: linear-gradient(to bottom, transparent, rgba(196,168,78,0.9) 20%, rgba(255,255,255,0.95) 45%, rgba(255,255,255,0.95) 55%, rgba(196,168,78,0.9) 80%, transparent);
+    box-shadow: 0 0 8px 2px rgba(196,168,78,0.6);
+  }
+
+  .hero-slash-line--pos {
+    transform: translateX(-50%) rotate(30deg);
+  }
+
+  .hero-slash-line--neg {
+    transform: translateX(-50%) rotate(-30deg);
+  }
+
+  @media (min-width: 1024px) {
+    .hero-x-container {
+      height: 120%;
+    }
+  }
+
+  /* Entrance animations */
+  @keyframes heroFadeLeft {
+    from { opacity: 0; transform: translateX(-16px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes heroFadeCenter {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes heroFadeRight {
+    from { opacity: 0; transform: translateX(16px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .hero-fade-left {
+    animation: heroFadeLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+  }
+
+  .hero-fade-center {
+    animation: heroFadeCenter 0.9s ease 0.5s both;
+  }
+
+  .hero-fade-right {
+    animation: heroFadeRight 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
   }
 </style>
