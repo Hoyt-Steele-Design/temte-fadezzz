@@ -4,32 +4,36 @@ const {
 } = Astro.props;
 ---
 
-<section id="about-me" class="about-me mb-4 scroll-mt-16">
-    <div class="overflow-hidden h-[60vh] mb-2">
-        <img
-            src={temteImg.src}
-            alt="Temte"
-            class="w-full h-full object-cover object-top"
-        />
-    </div>
-    <div
-        class="flex flex-col items-start justify-center p-2 gap-4 max-w-prose mx-auto px-4"
-    >
-        <h2
-            class="text-4xl font-bold leading-tight tracking-tight self-center [word-spacing:-0.01em]"
+<hr class="border-t border-gold mx-4 lg:mx-0 mb-8" />
+<section id="about-me" class="about-me scroll-mt-16 lg:px-24">
+    <div class="flex flex-col lg:flex-row lg:gap-12">
+        <div class="overflow-hidden h-[30vh] lg:h-auto lg:w-1/2 shrink-0 mb-2 lg:mb-0 mx-4 lg:mx-0">
+            <img
+                src={temteImg.src}
+                alt="Temte"
+                class="w-full h-full object-cover object-top"
+            />
+        </div>
+        <div
+            class="flex flex-col items-center lg:items-start justify-center px-4 pt-4 pb-8 gap-4 lg:pl-8 lg:pr-4 lg:pb-4 text-left"
         >
-            Hi, I'm Temte
-        </h2>
-        <p class="tracking-tight leading-tight">
-            I specialize in fades, beard work, and detailed design cuts. I also
-            offer hot lather straight razor services, along with hot wax and
-            skincare treatments to elevate your experience.
-        </p>
-        <p class="tracking-tight leading-tight">
-            My goal is simple: to give you a great conversation and a
-            meticulously detailed haircut that brings a new level of confidence.
-            A cut that looks sharp today — and stays easy to style and manage
-            for 2–4 weeks after.
-        </p>
+            <h2
+                class="text-4xl font-bold self-center [word-spacing:-0.01em]"
+            >
+                Hi, I'm <span class="text-gold">Temte</span>
+            </h2>
+            <p class="tracking-tight leading-tight max-w-[42ch] lg:max-w-none">
+                I specialize in fades, beard work, and detailed design cuts. I also
+                offer hot lather straight razor services, along with hot wax and
+                skincare treatments to elevate your experience.
+            </p>
+            <p class="tracking-tight leading-tight max-w-[42ch] lg:max-w-none">
+                My goal is simple: to give you a great conversation and a
+                meticulously detailed haircut that brings a new level of confidence.
+                A cut that looks sharp today — and stays easy to style and manage
+                for 2–4 weeks after.
+            </p>
+        </div>
     </div>
 </section>
+<hr class="border-t border-gold mx-4 lg:mx-0 lg:mt-8" />

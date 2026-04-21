@@ -1,15 +1,39 @@
 ---
+import { Image } from 'astro:assets'
+
+import img1 from '../images/portfolio/IMG_4930.jpg'
+import img2 from '../images/portfolio/IMG_4829.jpg'
+import img3 from '../images/portfolio/IMG_4828.jpg'
+import img4 from '../images/portfolio/IMG_4420.jpg'
+import img5 from '../images/portfolio/IMG_4367.jpg'
+import img6 from '../images/portfolio/IMG_3984.jpg'
+import img7 from '../images/portfolio/IMG_3865.jpg'
+import img8 from '../images/portfolio/IMG_3767.jpg'
+import img9 from '../images/portfolio/IMG_3758.jpg'
+import img10 from '../images/portfolio/IMG_3690.jpg'
+import img11 from '../images/portfolio/IMG_3669.jpg'
+import img12 from '../images/portfolio/IMG_3620.jpg'
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12]
 ---
 
-<section id="portfolio" class="scroll-mt-16 py-16">
+<section id="portfolio" class="scroll-mt-16 pt-16 pb-8">
   <div class="mb-8 px-4 text-center">
     <h2 class="font-garamond text-4xl lg:text-5xl">Portfolio</h2>
     <div class="mx-auto mt-3 h-px w-12 bg-gold"></div>
   </div>
 
   <div class="grid grid-cols-2 lg:grid-cols-3 gap-0.5">
-    {Array.from({ length: 6 }).map(() => (
-      <div class="aspect-square bg-neutral-900"></div>
+    {images.map((img) => (
+      <div class="aspect-square overflow-hidden">
+        <Image
+          src={img}
+          alt="Portfolio"
+          class="w-full h-full object-cover"
+          width={600}
+          height={600}
+        />
+      </div>
     ))}
   </div>
 </section>

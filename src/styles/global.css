@@ -5,12 +5,6 @@
   --font-inter: 'Inter', sans-serif;
   --color-gold: #c4a84e;
 
-  /* Hero headings */
-  --font-size-hero-title: 2.25rem;
-  --font-size-hero-title-lg: 4.5rem;
-  --font-size-hero-accent: 3rem;
-  --font-size-hero-accent-lg: 6rem;
-
   /* Button */
   --font-size-btn-lg: 1.3125rem;
 }

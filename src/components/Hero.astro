@@ -8,23 +8,25 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 ---
 
 <div
-  class="hero flex min-h-screen flex-col items-center justify-center gap-8 bg-cover bg-center"
+  class="hero flex min-h-screen flex-col items-center justify-center gap-8 bg-cover bg-center mb-8 lg:mb-16"
   style={`--bg-mobile: url(${mobileImage.src}); --bg-desktop: url(${desktopImage.src})`}
 >
   <div class="flex flex-col items-center text-center leading-tight">
-    <h1 class="font-garamond text-hero-title lg:text-hero-title-lg text-white">Your Fade</h1>
-    <h1 class="font-garamond text-hero-accent lg:text-hero-accent-lg text-gold">Your Story</h1>
+    <h1 class="font-garamond hero-title text-white">Your Fade</h1>
+    <h1 class="font-garamond hero-accent text-gold">Your Story</h1>
   </div>
 
   <div class="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
     <a
-      href="#"
+      href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
+      target="_blank"
+      rel="noopener noreferrer"
       class="btn btn-gold w-64 px-6 py-3 lg:w-auto lg:px-9 lg:py-[1.125rem] lg:text-btn-lg"
     >
       Book Appointment
     </a>
     <a
-      href="#"
+      href="#portfolio"
       class="btn btn-ghost-white w-64 px-6 py-3 lg:w-auto lg:px-9 lg:py-[1.125rem] lg:text-btn-lg"
     >
       View Portfolio
@@ -41,5 +43,13 @@ const desktopImage = await getImage({ src: heroDesktopImg })
     .hero {
       background-image: var(--bg-desktop);
     }
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+  }
+
+  .hero-accent {
+    font-size: clamp(3rem, 6.5vw, 6rem);
   }
 </style>
