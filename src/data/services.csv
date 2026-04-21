@@ -1,0 +1,14 @@
+category,emoji,name,description,price,duration
+Haircuts,✂️,Full Service,Full Service: Haircut & Beard. Includes Haircut/ Lineup/ Styling/,$75.00,1hr 30min
+Haircuts,✂️,Valentine Special (Only Valid 2/14),Full Service: Hair and beard,$60.00,1hr 30min
+Haircuts,✂️,Bald Fade/ Brush Fade,Faded up from bald/ hot guard. Includes Wavy/ Lineup/ Styling/,$60.00,—
+Haircuts,✂️,Regular Haircut (Fades do not apply),Regular Cut: Guards 1-6 or Mid-length. Includes Wavy/ Lineup/ Styling/,$40.00,30min
+Haircuts,✂️,Kids/ Senior Cut (Fades do not apply),Kids/ Senior Cut: Ages 10 & under/ 60 & Older,$30.00,20min
+Haircuts,✂️,Line Up (Fades do not apply),Lineup: Lining around Head/Neck/Ears. Includes Enhancement/ Razor/,$20.00,20min
+Haircuts,✂️,CBD Hair Treatment,Itchy scalp? Psoriasis? The ingredients in this scalp treatment will reduce the...,$15.00,10min
+Haircuts,✂️,Designs,Design Work. Prices vary depending on size.,$5.00+,20min
+Shaves,🪒,Beard Trim,Beard Trim: Razor & Detailed. Includes Hot Lather/ Hot Towel/ Massage/,$40.00,30min
+Shaves,🪒,Classic/ Head Shave,Classic/ Head Shave: Clean Shaven. Includes Hot Lather/ Hot Towel/ Massage/,$50.00,40min
+Esthetician Work,💆,Deluxe Facial,Deluxe Facial: Deep Facial Cleansing. Includes Cleansing/ Steam/ Hot Towels/,$60.00,1hr
+Esthetician Work,💆,Express Facial,Express Facial: Basic Cleansing. Includes Cleansing/ Hot Towels/,$35.00,20min
+Esthetician Work,💆,Waxing,Waxing: Ears/ Nose/ Eyebrows,$20.00,10min

@@ -1,35 +1,36 @@
 ---
+import { readFileSync } from 'fs'
+import { resolve } from 'path'
+
 type Service = {
   name: string
   description: string
-  price: number
+  price: string
+  duration: string
 }
 
 type ServiceGroup = {
   title: string
+  emoji: string
   services: Service[]
 }
 
-const serviceGroups: ServiceGroup[] = [
-  {
-    title: 'Haircuts',
-    services: [
-      { name: 'Service Name', description: 'Short description', price: 99 },
-    ],
-  },
-  {
-    title: 'Shaves',
-    services: [
-      { name: 'Service Name', description: 'Short description', price: 99 },
-    ],
-  },
-  {
-    title: 'Esthetician Work',
-    services: [
-      { name: 'Service Name', description: 'Short description', price: 99 },
-    ],
-  },
-]
+const csvPath = resolve('./src/data/services.csv')
+const csvText = readFileSync(csvPath, 'utf-8')
+
+const rows = csvText.trim().split('\n').slice(1)
+
+const groupMap = new Map<string, ServiceGroup>()
+
+for (const row of rows) {
+  const [category, emoji, name, description, price, duration] = row.split(',')
+  if (!groupMap.has(category)) {
+    groupMap.set(category, { title: category, emoji, services: [] })
+  }
+  groupMap.get(category)!.services.push({ name, description, price, duration })
+}
+
+const serviceGroups = Array.from(groupMap.values())
 ---
 
 <section id="services" class="scroll-mt-16 py-16 px-4">
@@ -45,7 +46,7 @@ const serviceGroups: ServiceGroup[] = [
     {serviceGroups.map((group) => (
       <div class="flex-1">
         <h3 class="font-inter text-xs font-semibold tracking-widest uppercase text-gold pb-2 border-b border-neutral-200 mb-4">
-          {group.title}
+          {group.emoji} {group.title}
         </h3>
         <ul class="flex flex-col gap-5">
           {group.services.map((service) => (
@@ -53,9 +54,12 @@ const serviceGroups: ServiceGroup[] = [
               <div>
                 <p class="font-inter text-sm font-semibold">{service.name}</p>
                 <p class="font-inter text-sm text-neutral-500">{service.description}</p>
+                {service.duration && service.duration !== '—' && (
+                  <p class="font-inter text-xs text-neutral-400 mt-0.5">{service.duration}</p>
+                )}
               </div>
               <data value={service.price} class="font-inter text-sm font-semibold text-gold whitespace-nowrap">
-                ${service.price}
+                {service.price}
               </data>
             </li>
           ))}
