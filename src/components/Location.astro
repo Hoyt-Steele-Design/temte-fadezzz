@@ -1,18 +1,21 @@
 ---
-import locationImg from "../images/location.jpg";
+import locationImg from '../images/location.jpg'
 ---
 
-<section id="location" class="location flex flex-col scroll-mt-16">
+<section id="location" class="location flex scroll-mt-16 flex-col">
   <div class="relative mb-4">
     <img
       src={locationImg.src}
       alt="Temte's Fades & Shaves location"
-      class="w-full h-64 object-cover object-[center_25%]"
+      class="h-64 w-full object-cover object-[center_25%]"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-    <div class="absolute inset-0 flex flex-col justify-end items-start p-4 text-white">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent">
+    </div>
+    <div
+      class="absolute inset-0 flex flex-col items-start justify-end p-4 text-white"
+    >
       <h2 class="font-garamond text-4xl font-bold">Location</h2>
-      <p class="text-sm mt-1">8030 Glen Ln, Suite 18, Eden Prairie, 55344</p>
+      <p class="mt-1 text-sm">8030 Glen Ln, Suite 18, Eden Prairie, 55344</p>
     </div>
   </div>
 
@@ -25,10 +28,7 @@ import locationImg from "../images/location.jpg";
     >
       Book Appointment
     </a>
-    <a
-      href="#portfolio"
-      class="btn btn-ghost w-64 px-6 py-3 mb-8"
-    >
+    <a href="#portfolio" class="btn btn-ghost mb-8 w-64 px-6 py-3">
       View Portfolio
     </a>
   </div>
