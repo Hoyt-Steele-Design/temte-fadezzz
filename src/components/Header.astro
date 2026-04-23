@@ -1,93 +1,213 @@
 ---
+
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 max-w-screen-lg mx-auto flex items-center justify-center p-4 bg-white">
-  <button id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer" class="absolute left-4 flex flex-col gap-1.5 p-2 bg-white/40 backdrop-blur-sm rounded">
-    <span class="block w-6 h-0.5 bg-current"></span>
-    <span class="block w-6 h-0.5 bg-current"></span>
-    <span class="block w-6 h-0.5 bg-current"></span>
+<header
+  class="align-center fixed top-0 right-0 left-0 z-50 grid max-w-screen grid-cols-5 justify-items-center bg-white p-4"
+>
+  <button
+    id="menu-open"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="nav-drawer"
+    class="flex flex-col items-center gap-2 self-center justify-self-start lg:hidden"
+  >
+    <span class="block h-0.5 w-6 bg-current"></span>
+    <span class="block h-0.5 w-6 bg-current"></span>
+    <span class="block h-0.5 w-6 bg-current"></span>
   </button>
 
-  <a href="/" class="brand">
-    <span class="text-2xl font-bold tracking-tight">TEMTE's <span class="text-sm font-light">Fades & Shaves</span></span>
+  <a
+    href="/"
+    class="col-span-3 text-nowrap lg:col-span-1 lg:justify-self-start"
+  >
+    <span class="text-2xl font-bold tracking-tight lg:text-3xl">TEMTE's </span>
+    <span class="text-sm font-light text-nowrap lg:text-xl">Fades & Shaves</span
+    >
   </a>
-</header>
-
-<dialog
-  id="nav-drawer"
-  class="fixed inset-y-0 right-0 m-0 h-screen max-h-screen w-[70%] max-w-sm bg-black text-white p-8
-         translate-x-full transition-transform duration-300 ease-in-out
-         open:translate-x-0 backdrop:bg-black/50"
->
-  <button id="menu-close" aria-label="Close menu" class="ml-auto flex p-2 text-2xl leading-none">✕</button>
-
-  <nav class="mt-8" aria-label="Site navigation">
-    <ul class="flex flex-col gap-4 text-base font-semibold tracking-widest uppercase">
-      <li><a href="#" onclick="document.getElementById('nav-drawer').close()">Home</a></li>
-      <li><a href="#about-me" onclick="document.getElementById('nav-drawer').close()">About</a></li>
-      <li><a href="#services" onclick="document.getElementById('nav-drawer').close()">Services</a></li>
-      <li><a href="#portfolio" onclick="document.getElementById('nav-drawer').close()">Portfolio</a></li>
-      <li><a href="#location" onclick="document.getElementById('nav-drawer').close()">Location</a></li>
+  <nav class="col-span-3 hidden lg:block" aria-label="Site navigation">
+    <ul class="flex h-full flex-row items-end gap-12 text-xl font-medium">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#location">Location</a></li>
     </ul>
   </nav>
 
-  <a
-    href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="btn btn-gold mt-6 inline-block px-6 py-3 whitespace-nowrap"
+  <dialog
+    id="nav-drawer"
+    class="fixed inset-y-0 right-0 m-0 h-screen max-h-screen w-[70%] max-w-sm translate-x-full bg-black p-8 text-white transition-transform duration-300 ease-in-out backdrop:bg-black/50 open:translate-x-0"
   >
-    Book Appointment
-  </a>
+    <button
+      id="menu-close"
+      aria-label="Close menu"
+      class="ml-auto flex p-2 text-2xl leading-none"
+      >✕
+    </button>
 
-  <div class="absolute bottom-8 left-8 right-8 flex flex-col items-center gap-4">
-    <div class="flex gap-5">
-      <!-- Instagram -->
-      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          <circle cx="12" cy="12" r="4"/>
-          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-        </svg>
-      </a>
-      <!-- Facebook -->
-      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-        </svg>
-      </a>
-      <!-- TikTok -->
-      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
-        </svg>
-      </a>
-      <!-- X / Twitter -->
-      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-      </a>
+    <nav class="mt-8" aria-label="Site navigation">
+      <ul
+        class="flex flex-col gap-4 text-base font-semibold tracking-widest uppercase"
+      >
+        <li>
+          <a href="#" onclick="document.getElementById('nav-drawer').close()"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about-me"
+            onclick="document.getElementById('nav-drawer').close()">About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#portfolio"
+            onclick="document.getElementById('nav-drawer').close()">Portfolio</a
+          >
+        </li>
+        <li>
+          <a
+            href="#services"
+            onclick="document.getElementById('nav-drawer').close()">Services</a
+          >
+        </li>
+        <li>
+          <a
+            href="#location"
+            onclick="document.getElementById('nav-drawer').close()">Location</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <a
+      href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-gold mt-6 inline-block px-6 py-3 whitespace-nowrap"
+    >
+      Book Appointment
+    </a>
+
+    <div
+      class="absolute right-8 bottom-8 left-8 flex flex-col items-center gap-4"
+    >
+      <div class="flex gap-5">
+        <!-- Instagram -->
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"
+            ></circle>
+          </svg>
+        </a>
+        <!-- Facebook -->
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            ></path>
+          </svg>
+        </a>
+        <!-- TikTok -->
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"
+            ></path>
+          </svg>
+        </a>
+        <!-- X / Twitter -->
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+      <p class="text-xs font-light">&copy; 2026 TEMTE's Fades & Shaves</p>
     </div>
-    <p class="text-xs font-light">&copy; 2026 TEMTE's Fades & Shaves</p>
-  </div>
-</dialog>
+  </dialog>
+</header>
 
 <script>
-  const drawer = document.getElementById('nav-drawer') as HTMLDialogElement;
-  const openBtn = document.getElementById('menu-open')!;
-  openBtn.addEventListener('click', () => {
-    drawer.showModal();
-    openBtn.setAttribute('aria-expanded', 'true');
-  });
-  const closeDrawer = () => {
-    drawer.close();
-    openBtn.setAttribute('aria-expanded', 'false');
-  };
-  document.getElementById('menu-close')!.addEventListener('click', closeDrawer);
+  const navDrawer = document.getElementById('nav-drawer') as HTMLDialogElement
+  const menuOpenBtn = document.getElementById('menu-open') as HTMLButtonElement
+  const menuCloseBtn = document.getElementById(
+    'menu-close'
+  ) as HTMLButtonElement
 
-  drawer.addEventListener('click', (e) => {
-    if (e.target === drawer) closeDrawer();
-  });
+  menuOpenBtn.addEventListener('click', () => {
+    navDrawer.showModal()
+    menuOpenBtn.setAttribute('aria-expanded', true)
+  })
 
+  menuCloseBtn.addEventListener('click', () => {
+    navDrawer.close()
+    menuOpenBtn.setAttribute('aria-expanded', false)
+  })
+
+  // Close nav drawer when tapping outside of the bounds of the dialog
+  navDrawer.addEventListener('click', () => {
+    const dialogDimensions = navDrawer.getBoundingClientRect()
+    if (
+      event.clientX < dialogDimensions.left ||
+      event.clientX > dialogDimensions.right ||
+      event.clientY < dialogDimensions.top ||
+      event.clientY > dialogDimensions.bottom
+    ) {
+      navDrawer.close()
+      menuOpenBtn.setAttribute('aria-expanded', false)
+    }
+  })
 </script>
