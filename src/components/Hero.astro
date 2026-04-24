@@ -17,21 +17,21 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   >
   </div>
   <div class="relative z-10 flex w-full flex-col items-center gap-12 px-8">
-    <div class="hero-diagonal flex flex-row items-stretch">
-      <div class="hero-fade-left flex items-center justify-start">
+    <div class="hero-diagonal flex flex-col items-center gap-2 lg:flex-row lg:items-stretch lg:gap-0">
+      <div class="hero-fade-left flex items-center justify-center lg:justify-start">
         <h1
           class="font-garamond hero-title text-2xl leading-none font-bold whitespace-nowrap text-white"
         >
           Your Fade
         </h1>
       </div>
-      <div class="hero-fade-center flex items-center justify-center px-4">
+      <div class="hero-fade-center flex items-center justify-center px-4 py-1 lg:py-0">
         <div class="hero-x-container">
           <div class="hero-slash-line hero-slash-line--pos"></div>
           <div class="hero-slash-line hero-slash-line--neg"></div>
         </div>
       </div>
-      <div class="hero-fade-right flex items-center justify-end">
+      <div class="hero-fade-right flex items-center justify-center lg:justify-end">
         <h1
           class="font-garamond hero-accent text-gold text-2xl leading-none font-bold whitespace-nowrap"
         >
@@ -73,27 +73,29 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   }
 
   .hero-title {
-    font-size: clamp(1.5rem, 7vw, 3.5rem);
+    font-size: clamp(2.75rem, 13vw, 3.5rem);
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8);
     -webkit-text-stroke: 0.3px rgba(255, 255, 255, 0.3);
   }
 
   .hero-accent {
-    font-size: clamp(1.5rem, 7vw, 3.5rem);
+    font-size: clamp(2.75rem, 13vw, 3.5rem);
     text-shadow:
       0 2px 16px rgba(0, 0, 0, 0.8),
       0 0 8px rgba(196, 168, 78, 0.7);
     -webkit-text-stroke: 0.6px rgba(196, 168, 78, 0.6);
   }
 
-  .hero-diagonal {
-    height: 5rem;
+  @media (min-width: 1024px) {
+    .hero-diagonal {
+      height: 5rem;
+    }
   }
 
   .hero-x-container {
     position: relative;
-    width: 20px;
-    height: 110%;
+    width: 120px;
+    height: 50px;
   }
 
   .hero-slash-line {
@@ -124,6 +126,7 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 
   @media (min-width: 1024px) {
     .hero-x-container {
+      width: 14px;
       height: 120%;
     }
   }
