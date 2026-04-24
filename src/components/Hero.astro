@@ -9,14 +9,14 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 
 <section
   id="home"
-  class="hero relative flex min-h-screen flex-col items-center justify-start gap-12 bg-cover bg-center pt-48 lg:justify-center lg:pt-0"
+  class="hero relative flex min-h-screen flex-col items-center justify-start bg-cover bg-center pt-32 lg:justify-center lg:pt-0"
   style={`--bg-mobile: url(${mobileImage.src}); --bg-desktop: url(${desktopImage.src})`}
 >
   <div
     class="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent to-black/10"
   >
   </div>
-  <div class="relative z-10 flex w-full flex-col items-center gap-12 px-8">
+  <div class="relative z-10 flex w-full flex-col items-center gap-28 px-8 lg:gap-12">
     <div class="hero-diagonal flex flex-col items-center gap-2 lg:flex-row lg:items-stretch lg:gap-0">
       <div class="hero-fade-left flex items-center justify-center lg:justify-start">
         <h1
@@ -73,13 +73,13 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   }
 
   .hero-title {
-    font-size: clamp(2.75rem, 13vw, 3.5rem);
+    font-size: clamp(3.25rem, 15vw, 4rem);
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8);
     -webkit-text-stroke: 0.3px rgba(255, 255, 255, 0.3);
   }
 
   .hero-accent {
-    font-size: clamp(2.75rem, 13vw, 3.5rem);
+    font-size: clamp(3.25rem, 15vw, 4rem);
     text-shadow:
       0 2px 16px rgba(0, 0, 0, 0.8),
       0 0 8px rgba(196, 168, 78, 0.7);
@@ -94,8 +94,8 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 
   .hero-x-container {
     position: relative;
-    width: 120px;
-    height: 50px;
+    width: 160px;
+    height: 70px;
   }
 
   .hero-slash-line {
