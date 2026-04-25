@@ -64,7 +64,7 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 <style>
   .hero {
     background-image: var(--bg-mobile);
-    min-height: calc(var(--vh, 1svh) * 100);
+    min-height: 100svh;
   }
 
   @media (min-width: 1024px) {
@@ -177,10 +177,3 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   }
 </style>
 
-<script>
-  function setVH() {
-    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-  }
-  setVH();
-  window.addEventListener('resize', setVH);
-</script>
