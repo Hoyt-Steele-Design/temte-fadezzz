@@ -1,70 +1,66 @@
 ---
-import { readFileSync } from 'fs'
-import { resolve } from 'path'
+import data from '../data/services.json'
 
-type Service = {
+type ServiceCategory = 'Haircuts' | 'Shaves' | 'Esthetician Work'
+
+interface ServiceGroup {
+  category: ServiceCategory
+  services: Service[]
+}
+
+interface Service {
   name: string
   description: string
   price: string
   duration: string
 }
 
-type ServiceGroup = {
-  title: string
-  emoji: string
-  services: Service[]
-}
-
-const csvPath = resolve('./src/data/services.csv')
-const csvText = readFileSync(csvPath, 'utf-8')
-
-const rows = csvText.trim().split('\n').slice(1)
-
-const groupMap = new Map<string, ServiceGroup>()
-
-for (const row of rows) {
-  const [category, emoji, name, description, price, duration] = row.split(',')
-  if (!groupMap.has(category)) {
-    groupMap.set(category, { title: category, emoji, services: [] })
-  }
-  groupMap.get(category)!.services.push({ name, description, price, duration })
-}
-
-const serviceGroups = Array.from(groupMap.values())
+const serviceGroups = data.serviceGroups as ServiceGroup[]
 ---
 
-<section id="services" class="scroll-mt-16 py-16 px-4">
+<section id="services" class="scroll-mt-16 px-4 py-16">
   <div class="mb-10 text-center">
     <h2 class="section-title">Services</h2>
     <div class="section-divider"></div>
-    <p class="mt-4 font-inter text-xs font-semibold tracking-widest uppercase text-neutral-500">
+    <p
+      class="font-inter mt-4 text-xs font-semibold tracking-widest text-neutral-500 uppercase"
+    >
       All services include wash, lineup &amp; styling
     </p>
   </div>
 
-  <div class="flex flex-col lg:flex-row gap-10 lg:gap-6 max-w-3xl mx-auto">
-    {serviceGroups.map((group) => (
-      <div class="flex-1">
-        <h3 class="font-inter text-xs font-semibold tracking-widest uppercase text-gold pb-2 border-b border-neutral-200 mb-4">
-          {group.emoji} {group.title}
-        </h3>
-        <ul class="flex flex-col gap-5">
-          {group.services.map((service) => (
-            <li class="flex items-start justify-between gap-4">
-              <div>
-                <p class="font-inter text-sm font-semibold">{service.name}</p>
-                <p class="font-inter text-sm text-neutral-500">{service.description}</p>
-                {service.duration && service.duration !== '—' && (
-                  <p class="font-inter text-xs text-neutral-400 mt-0.5">{service.duration}</p>
-                )}
-              </div>
-              <data value={service.price} class="font-inter text-sm font-semibold text-gold whitespace-nowrap">
-                {service.price}
-              </data>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
+  <div class="mx-auto flex max-w-3xl flex-col gap-10 lg:flex-row lg:gap-6">
+    {
+      serviceGroups.map((group) => (
+        <div class="flex-1">
+          <h3 class="font-inter text-gold mb-4 border-b border-neutral-200 pb-2 text-xs font-semibold tracking-widest uppercase">
+            {group.category}
+          </h3>
+          <ul class="flex flex-col gap-5">
+            {group.services.map((service) => (
+              <li class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="font-inter text-sm font-semibold">{service.name}</p>
+                  <p class="font-inter text-sm text-neutral-500">
+                    {service.description}
+                  </p>
+                  {service.duration && service.duration !== '—' && (
+                    <p class="font-inter mt-0.5 text-xs text-neutral-400">
+                      {service.duration}
+                    </p>
+                  )}
+                </div>
+                <data
+                  value={service.price}
+                  class="font-inter text-gold text-sm font-semibold whitespace-nowrap"
+                >
+                  {service.price}
+                </data>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
   </div>
 </section>
