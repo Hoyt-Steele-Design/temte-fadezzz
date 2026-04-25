@@ -1,0 +1,97 @@
+{
+  "serviceGroups": [
+    {
+      "category": "Haircuts",
+      "services": [
+        {
+          "name": "Full Service",
+          "description": "Full Service: Haircut & Beard. Includes Haircut/ Lineup/ Styling/",
+          "price": "$75.00",
+          "duration": "1hr 30min"
+        },
+        {
+          "name": "Valentine Special (Only Valid 2/14)",
+          "description": "Full Service: Hair and beard",
+          "price": "$60.00",
+          "duration": "1hr 30min"
+        },
+        {        
+          "name": "Bald Fade/ Brush Fade",
+          "description": "Faded up from bald/ hot guard. Includes Wavy/ Lineup/ Styling/",
+          "price": "$60.00",
+          "duration": "1hr"
+        },
+        {        
+          "name": "Regular Haircut (Fades do not apply)",
+          "description": "Regular Cut: Guards 1-6 or Mid-length. Includes Wavy/ Lineup/ Styling/",
+          "price": "$40.00",
+          "duration": "30min"
+        },
+        {        
+          "name": "Kids/ Senior Cut (Fades do not apply)",
+          "description": "Kids/ Senior Cut: Ages 10 & under/ 60 & Older",
+          "price": "$30.00",
+          "duration": "20min"
+        },
+        {
+          "name": "Line Up (Fades do not apply)",
+          "description": "Lineup: Lining around Head/Neck/Ears. Includes Enhancement/ Razor/",
+          "price": "$20.00",
+          "duration": "20min"
+        },
+        {        
+          "name": "CBD Hair Treatment",
+          "description": "Itchy scalp? Psoriasis? The ingredients in this scalp treatment will reduce the...",
+          "price": "$15.00",
+          "duration": "10min"
+        },
+        {        
+          "name": "Designs",
+          "description": "Design Work. Prices vary depending on size.",
+          "price": "$5.00+",
+          "duration": "20min"
+        }
+      ]
+    },
+    {
+      "category": "Shaves",
+      "services": [
+        {
+          "name": "Beard Trim",
+          "description": "Beard Trim: Razor & Detailed. Includes Hot Lather/ Hot Towel/ Massage/",
+          "price": "$40.00",
+          "duration": "30min"
+        },
+        {
+          "name": "Classic/ Head Shave",
+          "description": "Classic/ Head Shave: Clean Shaven. Includes Hot Lather/ Hot Towel/ Massage/",
+          "price": "$50.00",
+          "duration": "40min"
+        }
+      ]
+    },
+    {
+      "category": "Esthetician Work",
+      "services": [
+        {
+          "name": "Deluxe Facial",
+          "description": "Deluxe Facial: Deep Facial Cleansing. Includes Cleansing/ Steam/ Hot Towels/",
+          "price": "$60.00",
+          "duration": "1hr"
+        },
+        {
+          "name": "Express Facial",
+          "description": "Express Facial: Basic Cleansing. Includes Cleansing/ Hot Towels/",
+          "price": "$35.00",
+          "duration": "20min"
+        },
+        {
+          "name": "Waxing",
+          "description": "Waxing: Ears/ Nose/ Eyebrows",
+          "price": "$20.00",
+          "duration": "10min"
+        }
+      ]
+    }
+  ]
+}
