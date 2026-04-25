@@ -3,7 +3,7 @@
 ---
 
 <header
-  class="align-center fixed top-0 right-0 left-0 z-50 grid max-w-screen grid-cols-5 justify-items-center bg-white p-4"
+  class="fixed top-0 right-0 left-0 z-50 grid max-w-screen grid-cols-5 justify-items-center bg-white p-4"
 >
   <button
     id="menu-open"
@@ -189,16 +189,19 @@
 
   menuOpenBtn.addEventListener('click', () => {
     navDrawer.showModal()
-    menuOpenBtn.setAttribute('aria-expanded', true)
+    menuOpenBtn.setAttribute('aria-expanded', 'true')
   })
 
   menuCloseBtn.addEventListener('click', () => {
     navDrawer.close()
-    menuOpenBtn.setAttribute('aria-expanded', false)
+  })
+
+  navDrawer.addEventListener('close', () => {
+    menuOpenBtn.setAttribute('aria-expanded', 'false')
   })
 
   // Close nav drawer when tapping outside of the bounds of the dialog
-  navDrawer.addEventListener('click', () => {
+  navDrawer.addEventListener('click', (event) => {
     const dialogDimensions = navDrawer.getBoundingClientRect()
     if (
       event.clientX < dialogDimensions.left ||
@@ -207,7 +210,6 @@
       event.clientY > dialogDimensions.bottom
     ) {
       navDrawer.close()
-      menuOpenBtn.setAttribute('aria-expanded', false)
     }
   })
 </script>
