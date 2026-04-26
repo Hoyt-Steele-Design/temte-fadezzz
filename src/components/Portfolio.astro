@@ -7,14 +7,8 @@ import img3 from '../images/portfolio/IMG_4828.jpg'
 import img4 from '../images/portfolio/IMG_4420.jpg'
 import img5 from '../images/portfolio/IMG_4367.jpg'
 import img6 from '../images/portfolio/IMG_3984.jpg'
-import img7 from '../images/portfolio/IMG_3865.jpg'
-import img8 from '../images/portfolio/IMG_3767.jpg'
-import img9 from '../images/portfolio/IMG_3758.jpg'
-import img10 from '../images/portfolio/IMG_3690.jpg'
-import img11 from '../images/portfolio/IMG_3669.jpg'
-import img12 from '../images/portfolio/IMG_3620.jpg'
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12]
+const images = [img1, img2, img3, img4, img5, img6]
 ---
 
 <section id="portfolio" class="scroll-mt-16 pt-16 pb-8">
@@ -23,17 +17,54 @@ const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img
     <div class="section-divider"></div>
   </div>
 
-  <div class="grid grid-cols-2 lg:grid-cols-3 gap-0.5">
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-1">
     {images.map((img) => (
-      <div class="aspect-square overflow-hidden">
+      <div class="portfolio-cell">
         <Image
           src={img}
           alt="Portfolio"
-          class="w-full h-full object-cover"
-          width={600}
-          height={600}
+          class="portfolio-img"
+          width={800}
+          height={1067}
+          quality={85}
         />
       </div>
     ))}
   </div>
 </section>
+
+<style>
+  .portfolio-cell {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+  }
+
+  .portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .portfolio-cell:hover .portfolio-img {
+    transform: scale(1.05);
+  }
+</style>
+
+<style>
+  .portfolio-cell {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+  }
+
+  .portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .portfolio-cell:hover .portfolio-img {
+    transform: scale(1.05);
+  }
+</style>
