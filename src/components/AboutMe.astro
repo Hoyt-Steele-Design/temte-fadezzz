@@ -2,17 +2,17 @@
 const { temteImg } = Astro.props
 ---
 
-<section id="about-me" class="scroll-mt-16 pt-16 pb-16 relative overflow-hidden min-h-screen flex flex-col justify-center">
+<section id="about-me" class="scroll-mt-16 pt-16 pb-16 relative overflow-hidden lg:min-h-screen flex flex-col justify-center">
   <div class="mb-8 px-4 text-center">
     <h2 class="section-title">About Me</h2>
     <div class="section-divider"></div>
   </div>
-  <div class="mx-6 mt-8 mb-2 flex flex-col lg:flex-row lg:mx-auto lg:max-w-5xl lg:w-full lg:my-12">
+  <div class="mx-6 mt-4 mb-2 flex flex-col lg:flex-row lg:mx-auto lg:max-w-5xl lg:w-full lg:my-12">
     <div class="lg:basis-[45%] lg:shrink-0 lg:self-center">
       <img
         src={temteImg.src}
         alt="Temte"
-        class="h-full min-h-72 w-full object-cover object-top lg:min-h-0 lg:max-h-130 lg:[box-shadow:4px_8px_24px_0px_rgba(0,0,0,0.25)]"
+        class="h-full min-h-72 w-full object-cover object-top [box-shadow:4px_8px_24px_0px_rgba(0,0,0,0.25)] lg:min-h-0 lg:max-h-130"
       />
     </div>
     <div
@@ -37,7 +37,7 @@ const { temteImg } = Astro.props
 
   <!-- stats bar -->
   <div class="mx-auto max-w-5xl w-full px-6 lg:px-0 mt-2">
-    <div class="grid grid-cols-1 gap-3 text-center lg:grid-cols-3 lg:gap-4">
+    <div class="grid grid-cols-3 gap-2 text-center">
       <div class="border border-black/10 bg-white px-3 py-3 shadow-sm lg:px-4 lg:py-5">
         <div class="text-2xl font-bold text-gold lg:text-3xl">10+</div>
         <div class="mt-1 text-xs uppercase tracking-widest text-black/50">Years Experience</div>
@@ -54,7 +54,7 @@ const { temteImg } = Astro.props
   </div>
 
   <!-- testimonials -->
-  <div class="mt-10 pb-4 lg:mx-auto lg:max-w-5xl lg:w-full lg:px-0">
+  <div class="mt-6 pb-4 lg:mx-auto lg:max-w-5xl lg:w-full lg:px-0">
     <p class="mb-3 ml-6 text-xs uppercase tracking-widest text-black/40 whitespace-nowrap lg:hidden">What clients say</p>
     <div class="relative">
     <div id="reviews-carousel" class="mx-6 flex snap-x snap-mandatory overflow-x-auto gap-4 pb-2 [scrollbar-width:thin] [scrollbar-color:#c4a84e_transparent] lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
@@ -74,19 +74,49 @@ const { temteImg } = Astro.props
         <div class="mt-auto pt-4 text-xs uppercase tracking-widest text-gold">— Jessica</div>
       </div>
     </div>
-      <div id="swipe-hint" class="pointer-events-none absolute inset-y-0 right-0 flex w-20 items-center justify-end bg-linear-to-l from-white to-transparent pr-3 transition-opacity duration-500 lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
+      <button id="arrow-left" class="lg:hidden absolute left-0 inset-y-0 flex items-center pl-1 opacity-0 pointer-events-none transition-opacity duration-300 z-10" aria-label="Previous review">
+        <div class="bg-white/90 rounded-full p-1.5 shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </div>
+      </button>
+      <button id="arrow-right" class="lg:hidden absolute right-0 inset-y-0 flex items-center pr-1 transition-opacity duration-300 z-10" aria-label="Next review">
+        <div class="bg-white/90 rounded-full p-1.5 shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </button>
     </div>
   </div>
 </section>
 
 <script>
-  const carousel = document.getElementById('reviews-carousel');
-  const hint = document.getElementById('swipe-hint');
-  if (carousel && hint) {
-    carousel.addEventListener('scroll', () => hint.classList.add('opacity-0'), { once: true });
+  const carousel = document.getElementById('reviews-carousel') as HTMLElement;
+  const arrowLeft = document.getElementById('arrow-left') as HTMLButtonElement;
+  const arrowRight = document.getElementById('arrow-right') as HTMLButtonElement;
+
+  function updateArrows() {
+    const { scrollLeft, scrollWidth, clientWidth } = carousel;
+    const atStart = scrollLeft <= 10;
+    const atEnd = scrollLeft >= scrollWidth - clientWidth - 10;
+
+    arrowLeft.classList.toggle('opacity-0', atStart);
+    arrowLeft.classList.toggle('pointer-events-none', atStart);
+    arrowRight.classList.toggle('opacity-0', atEnd);
+    arrowRight.classList.toggle('pointer-events-none', atEnd);
   }
+
+  carousel.addEventListener('scroll', updateArrows, { passive: true });
+
+  arrowLeft.addEventListener('click', () => {
+    carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+  });
+
+  arrowRight.addEventListener('click', () => {
+    carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+  });
+
+  updateArrows();
 </script>
