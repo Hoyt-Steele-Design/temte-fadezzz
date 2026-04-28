@@ -177,3 +177,23 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   }
 </style>
 
+<script>
+  const hero = document.getElementById('home') as HTMLElement | null;
+
+  function lockHero() {
+    if (hero) hero.style.minHeight = `${window.innerHeight}px`;
+  }
+
+  lockHero();
+
+  // Browser chrome show/hide only changes height, never width.
+  // Only re-lock when width changes (real resize or orientation change).
+  let lastWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth !== lastWidth) {
+      lastWidth = window.innerWidth;
+      lockHero();
+    }
+  });
+</script>
+
