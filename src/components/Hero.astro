@@ -17,28 +17,26 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   >
   </div>
   <div class="relative z-10 flex w-full flex-col items-center gap-12 px-8">
-    <div class="hero-diagonal flex flex-row items-stretch">
-      <div class="hero-fade-left flex items-center justify-start">
-        <h1
-          class="font-garamond hero-title text-2xl leading-none font-bold whitespace-nowrap text-white"
-        >
-          Your Fade
-        </h1>
-      </div>
-      <div class="hero-fade-center flex items-center justify-center px-4">
-        <div class="hero-x-container">
-          <div class="hero-slash-line hero-slash-line--pos"></div>
-          <div class="hero-slash-line hero-slash-line--neg"></div>
+    <h1>
+      <div class="hero-diagonal flex flex-row items-stretch">
+        <div class="hero-fade-left flex items-center justify-start">
+          <span class="font-garamond hero-title text-2xl leading-none font-bold whitespace-nowrap text-white">
+            Your Fade
+          </span>
+        </div>
+        <div class="hero-fade-center flex items-center justify-center px-4">
+          <div class="hero-x-container">
+            <div class="hero-slash-line hero-slash-line--pos"></div>
+            <div class="hero-slash-line hero-slash-line--neg"></div>
+          </div>
+        </div>
+        <div class="hero-fade-right flex items-center justify-end">
+          <span class="font-garamond hero-accent text-gold text-2xl leading-none font-bold whitespace-nowrap">
+            Your Story
+          </span>
         </div>
       </div>
-      <div class="hero-fade-right flex items-center justify-end">
-        <h1
-          class="font-garamond hero-accent text-gold text-2xl leading-none font-bold whitespace-nowrap"
-        >
-          Your Story
-        </h1>
-      </div>
-    </div>
+    </h1>
 
     <div
       class="flex w-full flex-col items-center justify-center gap-6 lg:flex-row lg:gap-3"
