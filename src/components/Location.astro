@@ -1,13 +1,16 @@
 ---
+import { Image } from 'astro:assets'
 import locationImg from '../images/location.jpg'
 ---
 
 <section id="location" class="location flex scroll-mt-16 flex-col">
   <div class="relative mb-4">
-    <img
-      src={locationImg.src}
+    <Image
+      src={locationImg}
       alt="Temte's Fades & Shaves location"
       class="h-64 w-full object-cover object-[center_25%]"
+      width={1200}
+      height={256}
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent">
     </div>
@@ -28,8 +31,16 @@ import locationImg from '../images/location.jpg'
     >
       Book Appointment
     </a>
-    <a href="#portfolio" class="btn btn-ghost mb-8 w-64 px-6 py-3">
+    <a href="#portfolio" class="btn btn-ghost w-64 px-6 py-3">
       View Portfolio
+    </a>
+    <a
+      href="https://www.google.com/maps/place/TEMTE'S+Fades+%26+Shaves/@44.8579697,-93.4312232,17z/data=!3m1!4b1!4m6!3m5!1s0x87f619580c929971:0xb024d8646f094e37!8m2!3d44.8579697!4d-93.4286483!16s%2Fg%2F11yqkmp65x?entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-ghost mb-8 w-64 px-6 py-3"
+    >
+      Get Directions
     </a>
   </div>
 </section>
