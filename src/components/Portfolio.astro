@@ -8,7 +8,14 @@ import img4 from '../images/portfolio/IMG_4420.jpg'
 import img5 from '../images/portfolio/IMG_4367.jpg'
 import img6 from '../images/portfolio/IMG_3984.jpg'
 
-const images = [img1, img2, img3, img4, img5, img6]
+const images = [
+  { src: img1, alt: 'Fade haircut with sharp lineup' },
+  { src: img2, alt: 'Detailed beard trim and shave' },
+  { src: img3, alt: 'Bald fade haircut' },
+  { src: img4, alt: 'Skin fade with design work' },
+  { src: img5, alt: 'Taper fade haircut' },
+  { src: img6, alt: 'Full service haircut and beard' },
+]
 ---
 
 <section id="portfolio" class="scroll-mt-16 pt-16 pb-8">
@@ -21,8 +28,8 @@ const images = [img1, img2, img3, img4, img5, img6]
     {images.map((img) => (
       <div class="portfolio-cell">
         <Image
-          src={img}
-          alt="Portfolio"
+          src={img.src}
+          alt={img.alt}
           class="portfolio-img"
           width={800}
           height={1067}
@@ -32,24 +39,6 @@ const images = [img1, img2, img3, img4, img5, img6]
     ))}
   </div>
 </section>
-
-<style>
-  .portfolio-cell {
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-  }
-
-  .portfolio-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-
-  .portfolio-cell:hover .portfolio-img {
-    transform: scale(1.05);
-  }
-</style>
 
 <style>
   .portfolio-cell {
