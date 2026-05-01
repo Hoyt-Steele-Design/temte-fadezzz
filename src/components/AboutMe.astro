@@ -1,5 +1,6 @@
 ---
-const { temteImg } = Astro.props
+import { Image } from 'astro:assets'
+import temteImg from '../images/temte-cropped.jpeg'
 ---
 
 <section id="about-me" class="scroll-mt-16 pt-16 pb-16 relative overflow-hidden lg:min-h-screen flex flex-col justify-center">
@@ -9,19 +10,21 @@ const { temteImg } = Astro.props
   </div>
   <div class="mx-6 mt-4 mb-2 flex flex-col lg:flex-row lg:mx-auto lg:max-w-5xl lg:w-full lg:my-12">
     <div class="lg:basis-[45%] lg:shrink-0 lg:self-center">
-      <img
-        src={temteImg.src}
-        alt="Temte"
+      <Image
+        src={temteImg}
+        alt="Temte, barber at Temte's Fades & Shaves"
         class="h-full min-h-72 w-full object-cover object-top [box-shadow:4px_8px_24px_0px_rgba(0,0,0,0.25)] lg:min-h-0 lg:max-h-130"
+        width={800}
+        height={1000}
       />
     </div>
     <div
       class="flex flex-col items-center justify-center gap-3 px-4 pt-4 pb-2 text-left lg:flex-1 lg:items-start lg:gap-6 lg:px-14 lg:py-0"
     >
       <div class="lg:border-l-2 lg:border-gold lg:pl-5 self-stretch">
-        <h2 class="text-4xl font-bold [word-spacing:-0.01em] text-center lg:text-left">
+        <h3 class="text-4xl font-bold [word-spacing:-0.01em] text-center lg:text-left">
           Hi, I'm <span class="text-gold">Temte</span>
-        </h2>
+        </h3>
       </div>
       <p class="max-w-[72ch] leading-tight tracking-tight lg:max-w-none">
         I specialize in fades, beard work, and detailed design cuts. I also
