@@ -7,33 +7,80 @@ import img3 from '../images/portfolio/IMG_4828.jpg'
 import img4 from '../images/portfolio/IMG_4420.jpg'
 import img5 from '../images/portfolio/IMG_4367.jpg'
 import img6 from '../images/portfolio/IMG_3984.jpg'
-import img7 from '../images/portfolio/IMG_3865.jpg'
-import img8 from '../images/portfolio/IMG_3767.jpg'
-import img9 from '../images/portfolio/IMG_3758.jpg'
-import img10 from '../images/portfolio/IMG_3690.jpg'
-import img11 from '../images/portfolio/IMG_3669.jpg'
-import img12 from '../images/portfolio/IMG_3620.jpg'
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12]
+const images = [
+  { src: img1, alt: 'Fade haircut with sharp lineup' },
+  { src: img2, alt: 'Detailed beard trim and shave' },
+  { src: img3, alt: 'Bald fade haircut' },
+  { src: img4, alt: 'Skin fade with design work' },
+  { src: img5, alt: 'Taper fade haircut' },
+  { src: img6, alt: 'Full service haircut and beard' },
+]
+
+const DURATION = 5
+const TOTAL = images.length * DURATION
 ---
 
-<section id="portfolio" class="scroll-mt-16 pt-16 pb-8">
+<section id="portfolio" class="scroll-mt-16 pt-16 pb-16">
   <div class="mb-8 px-4 text-center">
     <h2 class="section-title">Portfolio</h2>
     <div class="section-divider"></div>
   </div>
 
-  <div class="grid grid-cols-2 lg:grid-cols-3 gap-0.5">
-    {images.map((img) => (
-      <div class="aspect-square overflow-hidden">
-        <Image
-          src={img}
-          alt="Portfolio"
-          class="w-full h-full object-cover"
-          width={600}
-          height={600}
-        />
-      </div>
+  <div class="portfolio-stage">
+    {images.map((img, i) => (
+      <Image
+        src={img.src}
+        alt={img.alt}
+        width={800}
+        height={1067}
+        quality={85}
+        class="portfolio-slide"
+        style={`animation-delay: ${i * DURATION}s; animation-duration: ${TOTAL}s`}
+      />
     ))}
   </div>
 </section>
+
+<style>
+  .portfolio-stage {
+    position: relative;
+    width: calc(100% - 3rem);
+    max-width: 22rem;
+    margin: 0 auto;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+  }
+
+  @media (min-width: 1024px) {
+    .portfolio-stage {
+      max-width: 32rem;
+    }
+  }
+
+  .portfolio-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0;
+    animation: crossfade linear infinite backwards;
+  }
+
+  /* Per-image duration: 5s (1s in, 3s hold, 1s out), total cycle: 30s
+     Keyframe percentages are relative to total cycle (30s):
+       0%      = 0s   → invisible
+       3.33%   = 1s   → fully visible (fade-in complete)
+       13.33%  = 4s   → still fully visible (hold ends)
+       16.67%  = 5s   → invisible again (fade-out complete)
+       100%    = 30s  → still invisible (waiting) */
+  @keyframes crossfade {
+    0%      { opacity: 0; }
+    3.33%   { opacity: 1; }
+    13.33%  { opacity: 1; }
+    16.67%  { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+</style>
