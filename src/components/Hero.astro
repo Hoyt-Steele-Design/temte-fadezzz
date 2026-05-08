@@ -49,7 +49,8 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 <style>
   .hero {
     background-image: var(--bg-mobile);
-    height: calc(100svh - 4rem);
+    height: calc(var(--lock-height, calc(100svh - 4rem)) + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
   .hero::before {
@@ -139,7 +140,7 @@ const desktopImage = await getImage({ src: heroDesktopImg })
     function lockHero() {
       if (hero && window.innerWidth < 1024) {
         var headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
-        hero.style.height = (window.innerHeight - headerHeight) + 'px';
+        hero.style.setProperty('--lock-height', (window.innerHeight - headerHeight) + 'px');
       }
     }
 
