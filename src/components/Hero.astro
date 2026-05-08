@@ -140,7 +140,19 @@ const desktopImage = await getImage({ src: heroDesktopImg })
     var siteHeader = document.querySelector('header');
 
     function syncPadding() {
-      if (siteHeader) document.body.style.paddingTop = siteHeader.offsetHeight + 'px';
+      var headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
+      document.body.style.paddingTop = headerHeight + 'px';
+      if (!hero) return;
+      if (window.innerWidth >= 1024) {
+        hero.style.removeProperty('height');
+        return;
+      }
+      var isPortrait = window.innerHeight > window.innerWidth;
+      if (isPortrait) {
+        hero.style.height = (window.innerHeight - headerHeight) + 'px';
+      } else {
+        hero.style.removeProperty('height');
+      }
     }
 
     syncPadding();
