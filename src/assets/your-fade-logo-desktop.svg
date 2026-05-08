@@ -1,0 +1,97 @@
+<svg id="desktop-logo" width="100%" viewBox="0 0 1440 260" overflow="visible" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Your Fade × Your Story</title>
+  <style>
+    #desktop-logo .logo-piece {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation-duration: 900ms;
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #desktop-logo .logo-fade {
+      animation-name: desktopSlideLeft;
+      animation-delay: 80ms;
+      animation-duration: 1450ms;
+    }
+
+    #desktop-logo .logo-x {
+      animation-name: desktopMark;
+      animation-delay: 700ms;
+    }
+
+    #desktop-logo .logo-story {
+      animation-name: desktopSlideRight;
+      animation-delay: 80ms;
+      animation-duration: 1450ms;
+    }
+
+    @keyframes desktopSlideLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-56px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes desktopSlideRight {
+      from {
+        opacity: 0;
+        transform: translateX(56px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes desktopMark {
+      from {
+        opacity: 0;
+        transform: scale(1.28);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #desktop-logo .logo-piece {
+        opacity: 1;
+        animation: none;
+      }
+    }
+  </style>
+  <defs>
+    <filter id="desktop-white-glow" x="-30%" y="-50%" width="160%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="1"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#ffffff" flood-opacity="0.2"/>
+    </filter>
+    <filter id="desktop-gold-glow" x="-30%" y="-50%" width="160%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="1"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#DDBA52" flood-opacity="0.34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#DDBA52" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <g class="logo-piece logo-fade">
+    <text x="646" y="155" text-anchor="end" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#000000" opacity="0.16">YOUR FADE</text>
+    <text x="644" y="153" text-anchor="end" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#ffffff" filter="url(#desktop-white-glow)">YOUR FADE</text>
+  </g>
+
+  <g class="logo-piece logo-x">
+    <text x="720" y="171" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="118" font-weight="600" font-style="italic" fill="#000000" opacity="0.18">X</text>
+    <text x="720" y="168" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="118" font-weight="600" font-style="italic" fill="#DDBA52" filter="url(#desktop-gold-glow)">X</text>
+  </g>
+
+  <g class="logo-piece logo-story">
+    <text x="808" y="155" text-anchor="start" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#000000" opacity="0.16">YOUR STORY</text>
+    <text x="806" y="153" text-anchor="start" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#DDBA52" filter="url(#desktop-gold-glow)">YOUR STORY</text>
+  </g>
+</svg>

@@ -3,14 +3,14 @@
 ---
 
 <header
-  class="fixed top-0 right-0 left-0 z-50 grid max-w-screen grid-cols-5 justify-items-center bg-white p-4"
+  class="fixed grid grid-cols-3 items-center top-0 right-0 left-0 z-50 bg-white p-4 lg:flex lg:items-end lg:justify-between"
 >
   <button
     id="menu-open"
     aria-label="Open menu"
     aria-expanded="false"
     aria-controls="nav-drawer"
-    class="flex flex-col items-center gap-2 self-center justify-self-start lg:hidden"
+    class="flex flex-col items-center gap-2 justify-self-start lg:hidden"
   >
     <span class="block h-0.5 w-6 bg-current"></span>
     <span class="block h-0.5 w-6 bg-current"></span>
@@ -19,13 +19,13 @@
 
   <a
     href="/"
-    class="col-span-3 text-nowrap lg:col-span-1 lg:justify-self-start"
+    class="col-start-2 justify-self-center text-nowrap lg:justify-self-auto"
   >
-    <span class="text-2xl font-bold tracking-tight lg:text-3xl">TEMTE's </span>
-    <span class="text-xs font-light text-nowrap lg:text-xl">Fades & Shaves</span
+    <span class="text-3xl font-bold tracking-tight lg:text-3xl">TEMTE's </span>
+    <span class="font-light text-nowrap lg:text-xl">Fades & Shaves</span
     >
   </a>
-  <nav class="col-span-3 hidden lg:block" aria-label="Site navigation">
+  <nav class="hidden lg:block" aria-label="Site navigation">
     <ul class="flex h-full flex-row items-end gap-8 text-xl font-medium xl:gap-12">
       <li><a href="#home" class="nav-link">Home</a></li>
       <li><a href="#about-me" class="nav-link">About Me</a></li>
@@ -39,7 +39,7 @@
     href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
     target="_blank"
     rel="noopener noreferrer"
-    class="btn btn-gold hidden px-5 py-2.5 text-sm lg:flex lg:items-center lg:justify-self-end whitespace-nowrap"
+    class="btn btn-gold hidden px-5 py-2.5 text-sm lg:flex lg:items-center whitespace-nowrap"
   >
     Book Now
   </a>
@@ -48,16 +48,17 @@
     id="nav-drawer"
     class="m-0 bg-black p-8 text-white backdrop:bg-black/50"
   >
-    <div class="flex items-center justify-between">
-      <a href="/" class="text-white">
-        <span class="text-2xl font-bold tracking-tight">TEMTE's </span>
-        <span class="text-xs font-light">Fades & Shaves</span>
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <a href="/" class="min-w-0 flex-1 text-white text-nowrap overflow-hidden">
+        <span class="text-lg font-bold tracking-tight">TEMTE's </span><span class="text-xs font-light">Fades & Shaves</span>
       </a>
       <button
         id="menu-close"
         aria-label="Close menu"
-        class="flex p-2 text-2xl leading-none"
-        >✕
+        autofocus
+        class="flex-shrink-0 p-2 text-xl leading-none"
+      >
+        ✕
       </button>
     </div>
 
@@ -84,7 +85,8 @@
     <div
       class="absolute right-8 bottom-8 left-8 flex flex-col items-center gap-4"
     >
-      <div class="flex gap-5">
+      <div class="flex flex-wrap justify-center gap-4"
+      >
         <!-- Instagram -->
         <a
           href="#"
@@ -179,17 +181,26 @@
     color: #c4a84e;
   }
 
-  /* Drawer — override UA stylesheet centering, position on left */
+  /* Drawer — 75% width mobile drawer */
   #nav-drawer {
     position: fixed;
     inset: 0 auto 0 0;
-    width: 70%;
-    max-width: 24rem;
-    height: 100dvh;
-    max-height: 100dvh;
+    width: 75%;
+    max-width: 75%;
+    box-sizing: border-box;
+    height: 100svh;
+    max-height: 100svh;
     overflow-y: auto;
     transform: translateX(-100%);
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  #nav-drawer svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    min-width: 1.25rem;
+  }
+  #nav-drawer a {
+    min-width: 0;
   }
   #nav-drawer.is-open {
     transform: translateX(0);
