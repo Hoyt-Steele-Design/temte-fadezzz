@@ -139,10 +139,14 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   (function () {
     var siteHeader = document.querySelector('header');
 
-    function syncPadding() {
+    function syncBodyPadding() {
       var headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
       document.body.style.paddingTop = headerHeight + 'px';
+    }
+
+    function lockHeroHeight() {
       if (!hero) return;
+      var headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
       if (window.innerWidth >= 1024) {
         hero.style.removeProperty('height');
         return;
@@ -155,15 +159,19 @@ const desktopImage = await getImage({ src: heroDesktopImg })
       }
     }
 
-    syncPadding();
+    syncBodyPadding();
+    lockHeroHeight();
 
     var lastWidth = window.innerWidth;
     window.addEventListener('resize', function () {
-      if (window.innerWidth !== lastWidth) { lastWidth = window.innerWidth; syncPadding(); }
+      if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        syncBodyPadding();
+      }
     });
 
     window.addEventListener('orientationchange', function () {
-      setTimeout(syncPadding, 150);
+      setTimeout(function () { syncBodyPadding(); lockHeroHeight(); }, 150);
     });
   })();
 </script>
