@@ -32,7 +32,12 @@ const { title } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <script is:inline>if (history.scrollRestoration) history.scrollRestoration = 'manual';</script>
+    <script is:inline>
+      if (history.scrollRestoration) history.scrollRestoration = 'manual';
+      // Safari ignores maximum-scale=1 in viewport meta — block its proprietary gesture events instead
+      document.addEventListener('gesturestart',  function(e) { e.preventDefault(); }, { passive: false });
+      document.addEventListener('gesturechange', function(e) { e.preventDefault(); }, { passive: false });
+    </script>
   </head>
   <body class="mx-auto max-w-screen pt-16">
     <slot />
