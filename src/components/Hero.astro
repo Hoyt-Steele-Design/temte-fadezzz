@@ -11,14 +11,14 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 
 <section
   id="home"
-  class="hero relative overflow-hidden bg-cover bg-center flex items-center justify-center"
+  class="hero relative overflow-hidden bg-cover bg-center flex items-center justify-center pb-16 lg:pb-0"
   style={`--bg-mobile: url(${mobileImage.src}); --bg-desktop: url(${desktopImage.src})`}
 >
   <div
     class="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent to-black/10"
   >
   </div>
-  <div class="relative z-10 flex flex-col items-center gap-10 w-full lg:px-8 lg:gap-12 lg:max-w-5xl">
+  <div class="relative z-10 flex flex-col items-center gap-4 w-full lg:px-8 lg:gap-12 lg:max-w-5xl">
     <div class="hero-fade-center w-full">
       <div class="block lg:hidden w-full max-w-sm mx-auto" aria-label="Your Fade × Your Story">
         <Fragment set:html={mobileSvg} />
