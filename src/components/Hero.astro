@@ -137,28 +137,21 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 
 <script is:inline>
   (function () {
-    var hero = document.getElementById('home');
     var siteHeader = document.querySelector('header');
 
-    function lockHero() {
-      var headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
-      document.body.style.paddingTop = headerHeight + 'px';
-      if (!hero) return;
-      hero.style.removeProperty('height');
+    function syncPadding() {
+      if (siteHeader) document.body.style.paddingTop = siteHeader.offsetHeight + 'px';
     }
 
-    lockHero();
+    syncPadding();
 
     var lastWidth = window.innerWidth;
     window.addEventListener('resize', function () {
-      if (window.innerWidth !== lastWidth) {
-        lastWidth = window.innerWidth;
-        lockHero();
-      }
+      if (window.innerWidth !== lastWidth) { lastWidth = window.innerWidth; syncPadding(); }
     });
 
     window.addEventListener('orientationchange', function () {
-      setTimeout(lockHero, 150);
+      setTimeout(syncPadding, 150);
     });
   })();
 </script>
