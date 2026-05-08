@@ -95,6 +95,8 @@ const desktopImage = await getImage({ src: heroDesktopImg })
     .hero-fade-center {
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
+      will-change: transform;
+      isolation: isolate;
     }
   }
 
