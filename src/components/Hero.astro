@@ -2,6 +2,8 @@
 import { getImage } from 'astro:assets'
 import heroMobileImg from '../images/hero-mobile.jpg'
 import heroDesktopImg from '../images/hero-desktop.jpeg'
+import mobileSvg from '../assets/your-fade-logo-mobile.svg?raw'
+import desktopSvg from '../assets/your-fade-logo-desktop.svg?raw'
 
 const mobileImage = await getImage({ src: heroMobileImg })
 const desktopImage = await getImage({ src: heroDesktopImg })
@@ -18,16 +20,12 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   </div>
   <div class="relative z-10 flex flex-col items-center gap-10 w-full px-8 lg:gap-12 lg:max-w-5xl">
     <div class="hero-fade-center w-full">
-      <img
-        src="/your-fade-logo-mobile.svg"
-        alt="Your Fade × Your Story"
-        class="block lg:hidden w-full max-w-xs mx-auto"
-      />
-      <img
-        src="/your-fade-logo-desktop.svg"
-        alt="Your Fade × Your Story"
-        class="hidden lg:block w-full mx-auto"
-      />
+      <div class="block lg:hidden w-full max-w-xs mx-auto" aria-label="Your Fade × Your Story">
+        <Fragment set:html={mobileSvg} />
+      </div>
+      <div class="hidden lg:block w-full mx-auto" aria-label="Your Fade × Your Story">
+        <Fragment set:html={desktopSvg} />
+      </div>
     </div>
     <div class="flex flex-col items-center gap-6 w-full lg:flex-row lg:gap-3 lg:justify-center">
       <a

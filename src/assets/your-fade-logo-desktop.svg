@@ -1,7 +1,7 @@
-<svg width="100%" viewBox="0 0 1440 260" role="img" xmlns="http://www.w3.org/2000/svg">
-  <title>Your Fade Logo - Desktop Horizontal</title>
+<svg id="desktop-logo" width="100%" viewBox="0 0 1440 260" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Your Fade × Your Story</title>
   <style>
-    .logo-piece {
+    #desktop-logo .logo-piece {
       opacity: 0;
       transform-box: fill-box;
       transform-origin: center;
@@ -10,18 +10,18 @@
       animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    .logo-fade {
+    #desktop-logo .logo-fade {
       animation-name: desktopSlideLeft;
       animation-delay: 80ms;
       animation-duration: 1450ms;
     }
 
-    .logo-x {
+    #desktop-logo .logo-x {
       animation-name: desktopMark;
       animation-delay: 700ms;
     }
 
-    .logo-story {
+    #desktop-logo .logo-story {
       animation-name: desktopSlideRight;
       animation-delay: 80ms;
       animation-duration: 1450ms;
@@ -61,7 +61,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .logo-piece {
+      #desktop-logo .logo-piece {
         opacity: 1;
         animation: none;
       }
@@ -86,18 +86,17 @@
   </defs>
 
   <g class="logo-piece logo-fade">
-    <text x="646" y="155" text-anchor="end" font-family="Garamond, EB Garamond, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#000000" opacity="0.16">YOUR FADE</text>
-    <text x="644" y="153" text-anchor="end" font-family="Garamond, EB Garamond, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#ffffff" filter="url(#desktop-white-glow)">YOUR FADE</text>
+    <text x="646" y="155" text-anchor="end" font-family="'EB Garamond', Garamond, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#000000" opacity="0.16">YOUR FADE</text>
+    <text x="644" y="153" text-anchor="end" font-family="'EB Garamond', Garamond, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#ffffff" filter="url(#desktop-white-glow)">YOUR FADE</text>
   </g>
 
   <g class="logo-piece logo-x">
-    <text x="720" y="171" text-anchor="middle" font-family="Garamond, EB Garamond, serif" font-size="118" font-weight="600" font-style="italic" fill="#000000" opacity="0.18">X</text>
-    <text x="720" y="168" text-anchor="middle" font-family="Garamond, EB Garamond, serif" font-size="118" font-weight="600" font-style="italic" fill="#DDBA52" filter="url(#desktop-gold-glow)">X</text>
+    <text x="720" y="171" text-anchor="middle" font-family="'EB Garamond', Garamond, serif" font-size="118" font-weight="600" font-style="italic" fill="#000000" opacity="0.18">X</text>
+    <text x="720" y="168" text-anchor="middle" font-family="'EB Garamond', Garamond, serif" font-size="118" font-weight="600" font-style="italic" fill="#DDBA52" filter="url(#desktop-gold-glow)">X</text>
   </g>
 
   <g class="logo-piece logo-story">
-    <text x="808" y="155" text-anchor="start" font-family="Garamond, EB Garamond, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#000000" opacity="0.16">YOUR STORY</text>
-    <text x="806" y="153" text-anchor="start" font-family="Garamond, EB Garamond, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#DDBA52" filter="url(#desktop-gold-glow)">YOUR STORY</text>
+    <text x="808" y="155" text-anchor="start" font-family="'EB Garamond', Garamond, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#000000" opacity="0.16">YOUR STORY</text>
+    <text x="806" y="153" text-anchor="start" font-family="'EB Garamond', Garamond, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#DDBA52" filter="url(#desktop-gold-glow)">YOUR STORY</text>
   </g>
-
 </svg>
