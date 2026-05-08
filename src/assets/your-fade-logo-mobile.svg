@@ -88,8 +88,8 @@
       <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#DDBA52" flood-opacity="0.34"/>
       <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#DDBA52" flood-opacity="0.16"/>
     </filter>
-    <!-- Absolute coords for the italic X — percentage-based regions undercount the diagonal slant -->
-    <filter id="mobile-x-gold-glow" filterUnits="userSpaceOnUse" x="100" y="220" width="490" height="320">
+    <!-- Large objectBoundingBox margins for the italic X — applied to a <g> so WebKit doesn't clip at typographic bounds -->
+    <filter id="mobile-x-gold-glow" x="-80%" y="-60%" width="260%" height="220%">
       <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="1"/>
       <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#DDBA52" flood-opacity="0.34"/>
       <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#DDBA52" flood-opacity="0.16"/>
@@ -99,18 +99,24 @@
   <!-- YOUR FADE — white -->
   <g class="logo-piece logo-fade">
     <text x="342" y="284" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#000000" opacity="0.16">YOUR FADE</text>
-    <text x="340" y="282" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#ffffff" filter="url(#mobile-white-glow)">YOUR FADE</text>
+    <g filter="url(#mobile-white-glow)">
+      <text x="340" y="282" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#ffffff">YOUR FADE</text>
+    </g>
   </g>
 
   <!-- X -->
   <g class="logo-piece logo-x">
     <text x="342" y="445" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="550" font-style="italic" fill="#000000" opacity="0.26">X</text>
-    <text x="340" y="443" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="550" font-style="italic" fill="#DDBA52" filter="url(#mobile-x-gold-glow)">X</text>
+    <g filter="url(#mobile-x-gold-glow)">
+      <text x="340" y="443" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="550" font-style="italic" fill="#DDBA52">X</text>
+    </g>
   </g>
 
   <!-- YOUR STORY — gold -->
   <g class="logo-piece logo-story">
     <text x="342" y="557" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#000000" opacity="0.24">YOUR STORY</text>
-    <text x="340" y="555" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#DDBA52" filter="url(#mobile-gold-glow)">YOUR STORY</text>
+    <g filter="url(#mobile-gold-glow)">
+      <text x="340" y="555" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#DDBA52">YOUR STORY</text>
+    </g>
   </g>
 </svg>
