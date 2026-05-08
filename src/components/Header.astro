@@ -3,14 +3,14 @@
 ---
 
 <header
-  class="fixed top-0 right-0 left-0 z-50 grid max-w-screen grid-cols-5 justify-items-center bg-white p-4"
+  class="fixed flex items-end justify-between top-0 right-0 left-0 z-50 bg-white p-4"
 >
   <button
     id="menu-open"
     aria-label="Open menu"
     aria-expanded="false"
     aria-controls="nav-drawer"
-    class="flex flex-col items-center gap-2 self-center justify-self-start lg:hidden"
+    class="flex flex-col items-center gap-2 self-center lg:hidden"
   >
     <span class="block h-0.5 w-6 bg-current"></span>
     <span class="block h-0.5 w-6 bg-current"></span>
@@ -19,13 +19,13 @@
 
   <a
     href="/"
-    class="col-span-3 text-nowrap lg:col-span-1 lg:justify-self-start"
+    class="text-nowrap"
   >
-    <span class="text-2xl font-bold tracking-tight lg:text-3xl">TEMTE's </span>
-    <span class="text-xs font-light text-nowrap lg:text-xl">Fades & Shaves</span
+    <span class="text-3xl font-bold tracking-tight lg:text-3xl">TEMTE's </span>
+    <span class="text-s font-light text-nowrap lg:text-xl">Fades & Shaves</span
     >
   </a>
-  <nav class="col-span-3 hidden lg:block" aria-label="Site navigation">
+  <nav class="hidden lg:block" aria-label="Site navigation">
     <ul class="flex h-full flex-row items-end gap-8 text-xl font-medium xl:gap-12">
       <li><a href="#home" class="nav-link">Home</a></li>
       <li><a href="#about-me" class="nav-link">About Me</a></li>
@@ -39,7 +39,7 @@
     href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
     target="_blank"
     rel="noopener noreferrer"
-    class="btn btn-gold hidden px-5 py-2.5 text-sm lg:flex lg:items-center lg:justify-self-end whitespace-nowrap"
+    class="btn btn-gold hidden px-5 py-2.5 text-sm lg:flex lg:items-center whitespace-nowrap"
   >
     Book Now
   </a>
