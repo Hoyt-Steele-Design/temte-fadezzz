@@ -18,16 +18,16 @@ const desktopImage = await getImage({ src: heroDesktopImg })
     class="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent to-black/10"
   >
   </div>
-  <div class="relative z-10 flex flex-col items-center gap-10 w-full px-8 lg:gap-12 lg:max-w-5xl">
+  <div class="relative z-10 flex flex-col items-center gap-10 w-full lg:px-8 lg:gap-12 lg:max-w-5xl">
     <div class="hero-fade-center w-full">
-      <div class="block lg:hidden w-full max-w-xs mx-auto" aria-label="Your Fade × Your Story">
+      <div class="block lg:hidden w-full" aria-label="Your Fade × Your Story">
         <Fragment set:html={mobileSvg} />
       </div>
       <div class="hidden lg:block w-full mx-auto" aria-label="Your Fade × Your Story">
         <Fragment set:html={desktopSvg} />
       </div>
     </div>
-    <div class="flex flex-col items-center gap-6 w-full lg:flex-row lg:gap-3 lg:justify-center">
+    <div class="flex flex-col items-center gap-6 w-full px-8 lg:flex-row lg:gap-3 lg:justify-center lg:px-0">
       <a
         href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
         target="_blank"
