@@ -1,4 +1,4 @@
-<svg id="mobile-logo" width="100%" viewBox="0 0 690 770" role="img" xmlns="http://www.w3.org/2000/svg">
+<svg id="mobile-logo" width="100%" viewBox="0 0 690 770" overflow="visible" role="img" xmlns="http://www.w3.org/2000/svg">
   <title>Your Fade × Your Story</title>
   <style>
     #mobile-logo .logo-piece {
@@ -78,12 +78,12 @@
       <stop offset="85%" stop-color="#000000" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </linearGradient>
-    <filter id="mobile-white-glow" x="-10%" y="-40%" width="120%" height="180%">
+    <filter id="mobile-white-glow" x="-30%" y="-50%" width="160%" height="200%">
       <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.9"/>
       <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity="0.2"/>
       <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#ffffff" flood-opacity="0.14"/>
     </filter>
-    <filter id="mobile-gold-glow" x="-10%" y="-40%" width="120%" height="180%">
+    <filter id="mobile-gold-glow" x="-30%" y="-50%" width="160%" height="200%">
       <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="1"/>
       <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#DDBA52" flood-opacity="0.34"/>
       <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#DDBA52" flood-opacity="0.16"/>
@@ -92,19 +92,19 @@
 
   <!-- YOUR FADE — white -->
   <g class="logo-piece logo-fade">
-    <text x="342" y="284" text-anchor="middle" font-family="'EB Garamond', Garamond, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#000000" opacity="0.16">YOUR FADE</text>
-    <text x="340" y="282" text-anchor="middle" font-family="'EB Garamond', Garamond, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#ffffff" filter="url(#mobile-white-glow)">YOUR FADE</text>
+    <text x="342" y="284" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#000000" opacity="0.16">YOUR FADE</text>
+    <text x="340" y="282" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#ffffff" filter="url(#mobile-white-glow)">YOUR FADE</text>
   </g>
 
   <!-- X -->
   <g class="logo-piece logo-x">
-    <text x="342" y="445" text-anchor="middle" font-family="'EB Garamond', Garamond, serif" font-size="154" font-weight="600" font-style="italic" fill="#000000" opacity="0.26">X</text>
-    <text x="340" y="443" text-anchor="middle" font-family="'EB Garamond', Garamond, serif" font-size="154" font-weight="600" font-style="italic" fill="#DDBA52" filter="url(#mobile-gold-glow)">X</text>
+    <text x="342" y="445" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="550" font-style="italic" fill="#000000" opacity="0.26">X</text>
+    <text x="340" y="443" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="550" font-style="italic" fill="#DDBA52" filter="url(#mobile-gold-glow)">X</text>
   </g>
 
   <!-- YOUR STORY — gold -->
   <g class="logo-piece logo-story">
-    <text x="342" y="557" text-anchor="middle" font-family="'EB Garamond', Garamond, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#000000" opacity="0.24">YOUR STORY</text>
-    <text x="340" y="555" text-anchor="middle" font-family="'EB Garamond', Garamond, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#DDBA52" filter="url(#mobile-gold-glow)">YOUR STORY</text>
+    <text x="342" y="557" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#000000" opacity="0.24">YOUR STORY</text>
+    <text x="340" y="555" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#DDBA52" filter="url(#mobile-gold-glow)">YOUR STORY</text>
   </g>
 </svg>
