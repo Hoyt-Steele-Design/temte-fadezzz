@@ -32,6 +32,7 @@ const { title } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script is:inline>if (history.scrollRestoration) history.scrollRestoration = 'manual';</script>
   </head>
   <body class="mx-auto max-w-screen pt-16">
     <slot />
