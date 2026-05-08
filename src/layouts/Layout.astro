@@ -36,4 +36,38 @@ const { title } = Astro.props
   <body class="mx-auto max-w-screen pt-16">
     <slot />
   </body>
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed')
+            obs.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' },
+    )
+
+    const earlyObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed')
+            earlyObs.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0, rootMargin: '0px 0px 180px 0px' },
+    )
+
+    const aboutMe = document.getElementById('about-me')
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      if (aboutMe?.contains(el)) {
+        earlyObs.observe(el)
+      } else {
+        obs.observe(el)
+      }
+    })
+  </script>
 </html>

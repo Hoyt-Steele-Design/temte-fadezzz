@@ -3,11 +3,11 @@ import temteImg from '../images/temte-cropped.jpeg'
 ---
 
 <section id="about-me" class="scroll-mt-16 pt-16 pb-16 relative overflow-hidden min-h-screen flex flex-col justify-center">
-  <div class="mb-8 px-4 text-center">
+  <div data-reveal class="mb-8 px-4 text-center">
     <h2 class="section-title">About Me</h2>
     <div class="section-divider"></div>
   </div>
-  <div class="mx-6 mt-8 mb-2 flex flex-col lg:flex-row lg:mx-auto lg:max-w-5xl lg:w-full lg:my-12">
+  <div data-reveal style="--reveal-delay: 80ms" class="mx-6 mt-8 mb-2 flex flex-col lg:flex-row lg:mx-auto lg:max-w-5xl lg:w-full lg:my-12">
     <div class="lg:basis-[45%] lg:shrink-0 lg:self-center">
       <img
         src={temteImg.src}
@@ -36,7 +36,7 @@ import temteImg from '../images/temte-cropped.jpeg'
   </div>
 
   <!-- stats bar -->
-  <div class="mx-auto max-w-5xl w-full px-6 lg:px-0 mt-2">
+  <div data-reveal style="--reveal-delay: 140ms" class="mx-auto max-w-5xl w-full px-6 lg:px-0 mt-2">
     <div class="grid grid-cols-1 gap-3 text-center lg:grid-cols-3 lg:gap-4">
       <div class="border border-black/10 bg-white px-3 py-3 shadow-sm lg:px-4 lg:py-5">
         <div class="text-2xl font-bold text-gold lg:text-3xl">10+</div>
@@ -54,7 +54,7 @@ import temteImg from '../images/temte-cropped.jpeg'
   </div>
 
   <!-- testimonials -->
-  <div class="mt-10 pb-4 lg:mx-auto lg:max-w-5xl lg:w-full lg:px-0">
+  <div data-reveal style="--reveal-delay: 180ms" class="mt-10 pb-4 lg:mx-auto lg:max-w-5xl lg:w-full lg:px-0">
     <p class="mb-3 ml-6 text-sm uppercase tracking-widest text-black/40 whitespace-nowrap lg:hidden">What clients say</p>
     <div class="relative">
       <div id="reviews-carousel" class="mx-6 flex snap-x snap-mandatory overflow-x-auto gap-3 pb-2 [scrollbar-width:thin] [scrollbar-color:#c4a84e_transparent] lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0 lg:gap-4">
