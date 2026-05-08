@@ -48,8 +48,16 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 
 <style>
   .hero {
+    --hero-viewport-height: 100vh;
+
     background-image: var(--bg-mobile);
-    height: 100svh;
+    height: var(--hero-viewport-height);
+  }
+
+  @supports (height: 100svh) {
+    .hero {
+      --hero-viewport-height: 100svh;
+    }
   }
 
   .hero::before {
@@ -135,3 +143,76 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   }
 </style>
 
+<script>
+  const hero = document.getElementById('home') as HTMLElement | null
+  const mobileViewport = window.matchMedia('(max-width: 1023px)')
+
+  let lockedViewportWidth = 0
+  let lockedViewportOrientation = ''
+  let lockedHeroHeight = 0
+  let resizeTimer: number | undefined
+
+  function getViewportSize() {
+    const viewport = window.visualViewport
+
+    return {
+      width: Math.round(viewport?.width ?? window.innerWidth),
+      height: Math.round(viewport?.height ?? window.innerHeight),
+      orientation:
+        window.screen.orientation?.type ??
+        (window.innerWidth > window.innerHeight ? 'landscape' : 'portrait'),
+    }
+  }
+
+  function setLockedHeroHeight(force = false) {
+    if (!hero) return
+
+    if (!mobileViewport.matches) {
+      hero.style.removeProperty('--hero-viewport-height')
+      lockedViewportWidth = 0
+      lockedViewportOrientation = ''
+      lockedHeroHeight = 0
+      return
+    }
+
+    const viewport = getViewportSize()
+    const viewportWidthChanged =
+      Math.abs(viewport.width - lockedViewportWidth) > 8
+    const viewportOrientationChanged =
+      viewport.orientation !== lockedViewportOrientation
+
+    if (
+      force ||
+      viewportWidthChanged ||
+      viewportOrientationChanged ||
+      lockedHeroHeight === 0
+    ) {
+      lockedViewportWidth = viewport.width
+      lockedViewportOrientation = viewport.orientation
+      lockedHeroHeight = viewport.height
+    } else {
+      lockedHeroHeight = Math.min(lockedHeroHeight, viewport.height)
+    }
+
+    hero.style.setProperty('--hero-viewport-height', `${lockedHeroHeight}px`)
+  }
+
+  function scheduleLockedHeroHeight(force = false) {
+    window.clearTimeout(resizeTimer)
+    setLockedHeroHeight(force)
+    resizeTimer = window.setTimeout(() => setLockedHeroHeight(force), 150)
+  }
+
+  scheduleLockedHeroHeight(true)
+
+  window.addEventListener('pageshow', () => scheduleLockedHeroHeight(true))
+  window.addEventListener('resize', () => scheduleLockedHeroHeight())
+  window.addEventListener('orientationchange', () => {
+    lockedViewportWidth = 0
+    lockedViewportOrientation = ''
+    window.setTimeout(() => scheduleLockedHeroHeight(true), 300)
+  })
+
+  window.visualViewport?.addEventListener('resize', () => scheduleLockedHeroHeight())
+  mobileViewport.addEventListener('change', () => scheduleLockedHeroHeight(true))
+</script>
