@@ -89,7 +89,7 @@
       <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#DDBA52" flood-opacity="0.16"/>
     </filter>
     <!-- Large objectBoundingBox margins for the italic X — applied to a <g> so WebKit doesn't clip at typographic bounds -->
-    <filter id="mobile-x-gold-glow" x="-80%" y="-60%" width="260%" height="220%">
+    <filter id="mobile-x-gold-glow" filterUnits="userSpaceOnUse" x="-80" y="260" width="850" height="260">
       <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="1"/>
       <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#DDBA52" flood-opacity="0.34"/>
       <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#DDBA52" flood-opacity="0.16"/>
