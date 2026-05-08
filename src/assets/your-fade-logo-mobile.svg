@@ -61,7 +61,7 @@
     }
 
     #mobile-logo .x-gold {
-      text-shadow: 0px 1px 3px rgba(0,0,0,0.35), 0px 0px 3px rgba(221,186,82,0.12), 0px 0px 7px rgba(221,186,82,0.07);
+      text-shadow: 0px 2px 5px rgba(0,0,0,0.5), 0px 0px 8px rgba(221,186,82,0.35), 0px 0px 18px rgba(221,186,82,0.18);
     }
     #mobile-logo .fade-white {
       text-shadow: 0px 2px 6px rgba(0,0,0,0.5), 0px 0px 10px rgba(255,255,255,0.12);
@@ -116,9 +116,9 @@
 
   <!-- YOUR STORY — gold -->
   <g class="logo-piece logo-story">
-    <text x="342" y="557" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#000000" opacity="0.24">YOUR STORY</text>
+    <text x="342" y="572" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#000000" opacity="0.24">YOUR STORY</text>
     <g filter="url(#mobile-gold-glow)">
-      <text x="340" y="555" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#DDBA52" class="story-gold">YOUR STORY</text>
+      <text x="340" y="570" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#DDBA52" class="story-gold">YOUR STORY</text>
     </g>
   </g>
 </svg>

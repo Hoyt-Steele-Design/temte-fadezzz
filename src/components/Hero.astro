@@ -142,9 +142,17 @@ const desktopImage = await getImage({ src: heroDesktopImg })
     var siteHeader = document.querySelector('header');
 
     function lockHero() {
-      if (hero && window.innerWidth < 1024) {
+      if (!hero) return;
+      if (window.innerWidth >= 1024) {
+        hero.style.removeProperty('--lock-height');
+        return;
+      }
+      var isPortrait = window.innerHeight > window.innerWidth;
+      if (isPortrait) {
         var headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
         hero.style.setProperty('--lock-height', (window.innerHeight - headerHeight) + 'px');
+      } else {
+        hero.style.removeProperty('--lock-height');
       }
     }
 
@@ -156,6 +164,10 @@ const desktopImage = await getImage({ src: heroDesktopImg })
         lastWidth = window.innerWidth;
         lockHero();
       }
+    });
+
+    window.addEventListener('orientationchange', function () {
+      setTimeout(lockHero, 150);
     });
   })();
 </script>
