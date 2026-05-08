@@ -147,7 +147,7 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   const siteHeader = document.querySelector('header') as HTMLElement | null;
 
   function lockHero() {
-    if (hero) {
+    if (hero && window.innerWidth < 1024) {
       const headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
       hero.style.height = `${window.innerHeight - headerHeight}px`;
     }
