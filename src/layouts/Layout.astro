@@ -34,6 +34,28 @@ const { title } = Astro.props
     <title>{title}</title>
     <script is:inline>
       if (history.scrollRestoration) history.scrollRestoration = 'manual';
+
+      function resetPageScroll() {
+        if (window.location.hash) return;
+
+        const root = document.documentElement;
+        const previousScrollBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        window.scrollTo(0, 0);
+        root.scrollTop = 0;
+        if (document.body) document.body.scrollTop = 0;
+        root.style.scrollBehavior = previousScrollBehavior;
+      }
+
+      resetPageScroll();
+      window.addEventListener('pageshow', resetPageScroll);
+      window.addEventListener('load', function() {
+        resetPageScroll();
+        requestAnimationFrame(resetPageScroll);
+        setTimeout(resetPageScroll, 120);
+        setTimeout(resetPageScroll, 400);
+      });
+
       // Safari ignores maximum-scale=1 in viewport meta — block its proprietary gesture events instead
       document.addEventListener('gesturestart',  function(e) { e.preventDefault(); }, { passive: false });
       document.addEventListener('gesturechange', function(e) { e.preventDefault(); }, { passive: false });

@@ -78,11 +78,6 @@
       <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#DDBA52" flood-opacity="0.34"/>
       <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#DDBA52" flood-opacity="0.16"/>
     </filter>
-    <mask id="desktop-text-gaps" maskUnits="userSpaceOnUse">
-      <rect x="0" y="0" width="1440" height="260" fill="white"/>
-      <rect x="139" y="74" width="1162" height="78" fill="black" rx="2"/>
-      <rect x="141" y="76" width="1162" height="78" fill="black" rx="2"/>
-    </mask>
   </defs>
 
   <g class="logo-piece logo-fade">
