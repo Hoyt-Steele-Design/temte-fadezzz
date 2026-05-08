@@ -61,7 +61,8 @@ const desktopImage = await getImage({ src: heroDesktopImg })
     background-size: cover;
     background-position: center;
     filter: brightness(0.9) contrast(1.06) saturate(1.02) hue-rotate(5deg);
-    transform: scale(1.01);
+    transform: scale(1.01) translateZ(0);
+    will-change: transform;
   }
 
   .hero::after {
@@ -142,6 +143,8 @@ const desktopImage = await getImage({ src: heroDesktopImg })
     var siteHeader = document.querySelector('header');
 
     function lockHero() {
+      var headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
+      document.body.style.paddingTop = headerHeight + 'px';
       if (!hero) return;
       if (window.innerWidth >= 1024) {
         hero.style.removeProperty('--lock-height');
@@ -149,7 +152,6 @@ const desktopImage = await getImage({ src: heroDesktopImg })
       }
       var isPortrait = window.innerHeight > window.innerWidth;
       if (isPortrait) {
-        var headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
         hero.style.setProperty('--lock-height', (window.innerHeight - headerHeight) + 'px');
       } else {
         hero.style.removeProperty('--lock-height');
