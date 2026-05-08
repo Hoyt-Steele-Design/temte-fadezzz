@@ -49,7 +49,7 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 <style>
   .hero {
     background-image: var(--bg-mobile);
-    height: var(--lock-height, calc(100svh - 4rem));
+    height: calc(100svh - 4rem);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
@@ -146,14 +146,14 @@ const desktopImage = await getImage({ src: heroDesktopImg })
       document.body.style.paddingTop = headerHeight + 'px';
       if (!hero) return;
       if (window.innerWidth >= 1024) {
-        hero.style.removeProperty('--lock-height');
+        hero.style.removeProperty('height');
         return;
       }
       var isPortrait = window.innerHeight > window.innerWidth;
       if (isPortrait) {
-        hero.style.setProperty('--lock-height', (window.innerHeight - headerHeight) + 'px');
+        hero.style.height = (window.innerHeight - headerHeight) + 'px';
       } else {
-        hero.style.removeProperty('--lock-height');
+        hero.style.removeProperty('height');
       }
     }
 
