@@ -102,9 +102,9 @@
 
   <!-- YOUR FADE — white -->
   <g class="logo-piece logo-fade">
-    <text x="342" y="284" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#000000" opacity="0.16">YOUR FADE</text>
+    <text x="342" y="284" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#000000" opacity="0.16">YOUR FADE</text>
     <g filter="url(#mobile-white-glow)">
-      <text x="340" y="282" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#ffffff" class="fade-white">YOUR FADE</text>
+      <text x="340" y="282" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#ffffff" class="fade-white">YOUR FADE</text>
     </g>
   </g>
 
@@ -116,9 +116,9 @@
 
   <!-- YOUR STORY — gold -->
   <g class="logo-piece logo-story">
-    <text x="342" y="572" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#000000" opacity="0.24">YOUR STORY</text>
+    <text x="342" y="572" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#000000" opacity="0.24">YOUR STORY</text>
     <g filter="url(#mobile-gold-glow)">
-      <text x="340" y="570" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="500" letter-spacing="5" fill="#DDBA52" class="story-gold">YOUR STORY</text>
+      <text x="340" y="570" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#DDBA52" class="story-gold">YOUR STORY</text>
     </g>
   </g>
 </svg>
