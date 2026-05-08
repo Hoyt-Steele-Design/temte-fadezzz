@@ -9,15 +9,15 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 
 <section
   id="home"
-  class="hero relative overflow-hidden bg-cover bg-center lg:flex lg:flex-col lg:items-center lg:justify-center"
+  class="hero relative overflow-hidden bg-cover bg-center flex items-center justify-center"
   style={`--bg-mobile: url(${mobileImage.src}); --bg-desktop: url(${desktopImage.src})`}
 >
   <div
     class="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent to-black/10"
   >
   </div>
-  <div class="relative z-10 h-full w-full lg:h-auto lg:flex lg:flex-col lg:items-center lg:gap-12 lg:px-8">
-    <div class="hero-fade-center absolute top-1/3 -translate-y-1/2 left-0 right-0 px-8 lg:relative lg:top-auto lg:translate-y-0 lg:left-auto lg:right-auto lg:px-0 lg:w-full">
+  <div class="relative z-10 flex flex-col items-center gap-10 w-full px-8 lg:gap-12 lg:max-w-5xl">
+    <div class="hero-fade-center w-full">
       <img
         src="/your-fade-logo-mobile.svg"
         alt="Your Fade × Your Story"
@@ -26,13 +26,10 @@ const desktopImage = await getImage({ src: heroDesktopImg })
       <img
         src="/your-fade-logo-desktop.svg"
         alt="Your Fade × Your Story"
-        class="hidden lg:block w-full max-w-5xl mx-auto"
+        class="hidden lg:block w-full mx-auto"
       />
     </div>
-
-    <div
-      class="absolute top-2/3 -translate-y-1/2 left-0 right-0 px-8 flex flex-col items-center gap-6 lg:relative lg:top-auto lg:translate-y-0 lg:left-auto lg:right-auto lg:flex-row lg:gap-3 lg:w-full lg:justify-center lg:px-8"
-    >
+    <div class="flex flex-col items-center gap-6 w-full lg:flex-row lg:gap-3 lg:justify-center">
       <a
         href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
         target="_blank"
@@ -54,7 +51,7 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 <style>
   .hero {
     background-image: var(--bg-mobile);
-    height: 100svh;
+    height: calc(100svh - 4rem);
   }
 
   .hero::before {
@@ -92,16 +89,12 @@ const desktopImage = await getImage({ src: heroDesktopImg })
     }
   }
 
-  .hero-fade-center {
-    position: relative;
-  }
-
   /* iOS Safari: backdrop-filter on siblings can cause SVG to render blurry.
      Force the SVG wrapper onto its own GPU compositing layer to fix this. */
   @media (max-width: 1023px) {
     .hero-fade-center {
-      -webkit-transform: translateY(-50%) translateZ(0);
-      transform: translateY(-50%) translateZ(0);
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
   }
 
@@ -151,9 +144,13 @@ const desktopImage = await getImage({ src: heroDesktopImg })
 
 <script>
   const hero = document.getElementById('home') as HTMLElement | null;
+  const siteHeader = document.querySelector('header') as HTMLElement | null;
 
   function lockHero() {
-    if (hero) hero.style.height = `${window.innerHeight}px`;
+    if (hero) {
+      const headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
+      hero.style.height = `${window.innerHeight - headerHeight}px`;
+    }
   }
 
   lockHero();
