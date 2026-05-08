@@ -89,14 +89,13 @@ const desktopImage = await getImage({ src: heroDesktopImg })
     }
   }
 
-  /* iOS Safari: backdrop-filter on siblings can cause SVG to render blurry.
-     Force the SVG wrapper onto its own GPU compositing layer to fix this. */
+  /* iOS Safari: backdrop-filter on siblings bleeds onto the SVG.
+     Applying backdrop-filter: blur(0) forces its own compositing layer,
+     completely isolating it from the button blur layers. */
   @media (max-width: 1023px) {
     .hero-fade-center {
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-      will-change: transform;
-      isolation: isolate;
+      -webkit-backdrop-filter: blur(0px);
+      backdrop-filter: blur(0px);
     }
   }
 
@@ -144,26 +143,26 @@ const desktopImage = await getImage({ src: heroDesktopImg })
   }
 </style>
 
-<script>
-  const hero = document.getElementById('home') as HTMLElement | null;
-  const siteHeader = document.querySelector('header') as HTMLElement | null;
+<script is:inline>
+  (function () {
+    var hero = document.getElementById('home');
+    var siteHeader = document.querySelector('header');
 
-  function lockHero() {
-    if (hero && window.innerWidth < 1024) {
-      const headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
-      hero.style.height = `${window.innerHeight - headerHeight}px`;
+    function lockHero() {
+      if (hero && window.innerWidth < 1024) {
+        var headerHeight = siteHeader ? siteHeader.offsetHeight : 64;
+        hero.style.height = (window.innerHeight - headerHeight) + 'px';
+      }
     }
-  }
 
-  lockHero();
+    lockHero();
 
-  // Browser chrome show/hide only changes height, never width.
-  // Only re-lock when width changes (real resize or orientation change).
-  let lastWidth = window.innerWidth;
-  window.addEventListener('resize', () => {
-    if (window.innerWidth !== lastWidth) {
-      lastWidth = window.innerWidth;
-      lockHero();
-    }
-  });
+    var lastWidth = window.innerWidth;
+    window.addEventListener('resize', function () {
+      if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        lockHero();
+      }
+    });
+  })();
 </script>
