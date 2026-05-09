@@ -44,7 +44,7 @@ const bookingUrl = settings?.bookingUrl ?? ''
     href={bookingUrl}
     target="_blank"
     rel="noopener noreferrer"
-    class="btn btn-gold hidden px-5 py-2.5 text-sm lg:flex lg:items-center whitespace-nowrap"
+    class="btn btn-glass-gold hidden px-5 py-2.5 text-sm lg:flex lg:items-center whitespace-nowrap"
   >
     Book Now
   </a>
@@ -82,7 +82,7 @@ const bookingUrl = settings?.bookingUrl ?? ''
       href={bookingUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="btn btn-gold mt-12 inline-block px-6 py-3 whitespace-nowrap"
+      class="btn btn-glass-gold mt-12 inline-block px-6 py-3 whitespace-nowrap"
     >
       Book Appointment
     </a>
@@ -100,10 +100,11 @@ const bookingUrl = settings?.bookingUrl ?? ''
 
 <style>
   .nav-link {
-    transition: color 0.2s ease;
+    transition: color 0.7s ease;
   }
   .nav-link:hover {
-    color: var(--color-gold);
+    color: #f0d060;
+    transition: color 0.2s ease;
   }
 
   /* Drawer — 75% width mobile drawer */

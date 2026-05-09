@@ -25,7 +25,7 @@ const bookingUrl = settings?.bookingUrl ?? ''
     {
       serviceGroups.map((group, i) => (
         <div data-reveal data-reveal-delay={80 + i * 80} class="flex-1">
-          <h3 class="font-inter text-gold mb-4 border-b border-neutral-200 pb-2 text-xs font-semibold tracking-widest uppercase">
+          <h3 class="font-inter text-gold-grad mb-4 border-b border-neutral-200 pb-2 text-xs font-semibold tracking-widest uppercase">
             {group.category}
           </h3>
           <ul class="flex flex-col gap-5">
@@ -44,7 +44,7 @@ const bookingUrl = settings?.bookingUrl ?? ''
                 </div>
                 <data
                   value={service.price}
-                  class="font-inter text-gold text-sm font-semibold whitespace-nowrap"
+                  class="font-inter text-gold-grad text-sm font-semibold whitespace-nowrap"
                 >
                   {service.price}
                 </data>
@@ -61,12 +61,12 @@ const bookingUrl = settings?.bookingUrl ?? ''
       href={bookingUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="btn btn-gold w-full px-6 py-4"
+      class="btn btn-glass-gold w-full px-6 py-4"
     >
-      — Book Appointment —
+      Book Appointment
     </a>
-    <a href="#portfolio" class="btn btn-ghost w-full px-6 py-4">
-      — View Portfolio —
+    <a href="#portfolio" class="btn btn-glass-white w-full px-6 py-4">
+      View Portfolio
     </a>
   </div>
 </section>

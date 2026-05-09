@@ -61,13 +61,13 @@
     }
 
     #mobile-logo .x-gold {
-      text-shadow: 0px 2px 5px rgba(0,0,0,0.5), 0px 0px 8px rgba(221,186,82,0.35), 0px 0px 18px rgba(221,186,82,0.18);
+      text-shadow: 0px 2px 5px rgba(0,0,0,0.5), 0px 0px 8px rgba(240,208,96,0.35), 0px 0px 18px rgba(240,208,96,0.18);
     }
     #mobile-logo .fade-white {
       text-shadow: 0px 2px 6px rgba(0,0,0,0.5), 0px 0px 10px rgba(255,255,255,0.12);
     }
     #mobile-logo .story-gold {
-      text-shadow: 0px 2px 6px rgba(0,0,0,0.5), 0px 0px 10px rgba(221,186,82,0.18);
+      text-shadow: 0px 2px 6px rgba(0,0,0,0.5), 0px 0px 10px rgba(240,208,96,0.18);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -78,6 +78,11 @@
     }
   </style>
   <defs>
+    <linearGradient id="mobile-gold-grad" x1="-80" y1="0" x2="770" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c8a030"/>
+      <stop offset="45%" stop-color="#f0d060"/>
+      <stop offset="100%" stop-color="#c8a840"/>
+    </linearGradient>
     <filter id="mobile-white-glow" x="-30%" y="-50%" width="160%" height="200%">
       <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.9"/>
       <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity="0.2"/>
@@ -85,8 +90,8 @@
     </filter>
     <filter id="mobile-gold-glow" x="-30%" y="-50%" width="160%" height="200%">
       <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="1"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#DDBA52" flood-opacity="0.34"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#DDBA52" flood-opacity="0.16"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#f0d060" flood-opacity="0.34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#f0d060" flood-opacity="0.16"/>
     </filter>
   </defs>
 
@@ -94,21 +99,21 @@
   <g class="logo-piece logo-fade">
     <text x="342" y="284" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#000000" opacity="0.16">YOUR FADE</text>
     <g filter="url(#mobile-white-glow)">
-      <text x="340" y="282" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#ffffff" class="fade-white">YOUR FADE</text>
+      <text x="340" y="282" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#ffffff" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.8" paint-order="stroke fill" class="fade-white">YOUR FADE</text>
     </g>
   </g>
 
   <!-- X -->
   <g class="logo-piece logo-x">
     <text x="342" y="445" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="515" font-style="italic" fill="#000000" opacity="0.26">X</text>
-    <text x="340" y="443" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="515" font-style="italic" fill="#DDBA52" class="x-gold">X</text>
+    <text x="340" y="443" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="515" font-style="italic" fill="url(#mobile-gold-grad)" stroke="#ffd250" stroke-width="0.6" stroke-opacity="0.75" paint-order="stroke fill" class="x-gold">X</text>
   </g>
 
   <!-- YOUR STORY — gold -->
   <g class="logo-piece logo-story">
     <text x="342" y="572" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#000000" opacity="0.24">YOUR STORY</text>
     <g filter="url(#mobile-gold-glow)">
-      <text x="340" y="570" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#DDBA52" class="story-gold">YOUR STORY</text>
+      <text x="340" y="570" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="url(#mobile-gold-grad)" stroke="#ffd250" stroke-width="0.6" stroke-opacity="0.75" paint-order="stroke fill" class="story-gold">YOUR STORY</text>
     </g>
   </g>
 </svg>
