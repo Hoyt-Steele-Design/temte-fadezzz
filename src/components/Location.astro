@@ -3,8 +3,8 @@ import { Image } from 'astro:assets'
 import locationImg from '../images/location.jpg'
 ---
 
-<section id="location" class="flex scroll-mt-16 flex-col pt-16 pb-8 px-4">
-  <div data-reveal class="max-w-3xl mx-auto w-full">
+<section id="location" class="flex scroll-mt-16 flex-col px-4 pt-16 pb-8">
+  <div data-reveal class="mx-auto w-full max-w-3xl">
     <a
       href="https://maps.apple.com/?address=8030+Glen+Ln,+Suite+18,+Eden+Prairie,+55344"
       target="_blank"
@@ -18,13 +18,23 @@ import locationImg from '../images/location.jpg'
         quality={85}
         class="h-64 w-full object-cover object-[center_25%]"
       />
-      <div class="absolute inset-0 bg-linear-to-t from-black/90 to-transparent"></div>
-      <div class="absolute inset-0 bg-white/0 transition-all duration-300 group-hover:bg-white/10"></div>
-      <div class="absolute inset-0 flex flex-col items-start justify-end p-4 text-white">
+      <div class="absolute inset-0 bg-linear-to-t from-black/90 to-transparent">
+      </div>
+      <div
+        class="absolute inset-0 bg-white/0 transition-all duration-300 group-hover:bg-white/10"
+      >
+      </div>
+      <div
+        class="absolute inset-0 flex flex-col items-start justify-end p-4 text-white"
+      >
         <h2 class="font-garamond text-4xl font-bold">Location</h2>
         <div class="flex w-full items-end justify-between">
-          <p class="mt-1 text-sm">8030 Glen Ln, Suite 18, Eden Prairie, 55344</p>
-          <span class="ml-3 shrink-0 rounded-full border border-white/40 px-2.5 py-1 text-xs font-semibold tracking-wide text-white/90">
+          <p class="mt-1 text-sm">
+            8030 Glen Ln, Suite 18, Eden Prairie, 55344
+          </p>
+          <span
+            class="ml-3 shrink-0 rounded-full border border-white/40 px-2.5 py-1 text-xs font-semibold tracking-wide text-white/90"
+          >
             Open in Maps ↗
           </span>
         </div>
@@ -33,31 +43,50 @@ import locationImg from '../images/location.jpg'
 
     <!-- Hours -->
     <div class="border border-black/10 px-5 py-4">
-      <h3 class="font-inter mb-3 text-xs font-semibold uppercase tracking-widest text-neutral-500">Hours</h3>
+      <h3
+        class="font-inter mb-3 text-xs font-semibold tracking-widest text-neutral-500 uppercase"
+      >
+        Hours
+      </h3>
       <ul class="flex flex-col gap-2">
         <li class="flex items-center justify-between text-sm">
           <span class="font-medium">Monday</span>
           <span class="text-neutral-500">Closed</span>
         </li>
-        <li class="flex items-center justify-between text-sm">
+        <li class="flex items-start justify-between text-sm">
           <span class="font-medium">Tuesday</span>
-          <span class="text-neutral-500">9:00 AM – 6:00 PM</span>
+          <span class="flex flex-col items-end text-neutral-500">
+            <span>10:00 AM – 2:00 PM</span>
+            <span>2:30 PM – 6:00 PM</span>
+          </span>
         </li>
-        <li class="flex items-center justify-between text-sm">
+        <li class="flex items-start justify-between text-sm">
           <span class="font-medium">Wednesday</span>
-          <span class="text-neutral-500">9:00 AM – 6:00 PM</span>
+          <span class="flex flex-col items-end text-neutral-500">
+            <span>10:00 AM – 2:00 PM</span>
+            <span>2:30 PM – 6:00 PM</span>
+          </span>
         </li>
-        <li class="flex items-center justify-between text-sm">
+        <li class="flex items-start justify-between text-sm">
           <span class="font-medium">Thursday</span>
-          <span class="text-neutral-500">9:00 AM – 6:00 PM</span>
+          <span class="flex flex-col items-end text-neutral-500">
+            <span>10:00 AM – 2:00 PM</span>
+            <span>2:30 PM – 6:00 PM</span>
+          </span>
         </li>
-        <li class="flex items-center justify-between text-sm">
+        <li class="flex items-start justify-between text-sm">
           <span class="font-medium">Friday</span>
-          <span class="text-neutral-500">9:00 AM – 6:00 PM</span>
+          <span class="flex flex-col items-end text-neutral-500">
+            <span>10:00 AM – 2:00 PM</span>
+            <span>2:30 PM – 6:00 PM</span>
+          </span>
         </li>
-        <li class="flex items-center justify-between text-sm">
+        <li class="flex items-start justify-between text-sm">
           <span class="font-medium">Saturday</span>
-          <span class="text-neutral-500">9:00 AM – 4:00 PM</span>
+          <span class="flex flex-col items-end text-neutral-500">
+            <span>9:00 AM – 1:30 PM</span>
+            <span>2:00 PM – 5:00 PM</span>
+          </span>
         </li>
         <li class="flex items-center justify-between text-sm">
           <span class="font-medium">Sunday</span>
