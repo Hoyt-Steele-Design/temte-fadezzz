@@ -27,7 +27,7 @@ const TOTAL = images.length * DURATION
     <div class="section-divider"></div>
   </div>
 
-  <div data-reveal style="--reveal-delay: 100ms" class="portfolio-stage">
+  <div data-reveal data-reveal-delay="100" class="portfolio-stage">
     {images.map((img, i) => (
       <Image
         src={img.src}
@@ -82,5 +82,15 @@ const TOTAL = images.length * DURATION
     13.33%  { opacity: 1; }
     16.67%  { opacity: 0; }
     100%    { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .portfolio-slide {
+      animation: none;
+      opacity: 1;
+    }
+    .portfolio-slide:not(:first-child) {
+      display: none;
+    }
   }
 </style>

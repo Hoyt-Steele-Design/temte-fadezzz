@@ -32,7 +32,7 @@ const serviceGroups = data.serviceGroups as ServiceGroup[]
   <div class="mx-auto flex max-w-3xl flex-col gap-10 lg:flex-row lg:gap-6">
     {
       serviceGroups.map((group, i) => (
-        <div data-reveal style={`--reveal-delay: ${80 + i * 80}ms`} class="flex-1">
+        <div data-reveal data-reveal-delay={80 + i * 80} class="flex-1">
           <h3 class="font-inter text-gold mb-4 border-b border-neutral-200 pb-2 text-xs font-semibold tracking-widest uppercase">
             {group.category}
           </h3>

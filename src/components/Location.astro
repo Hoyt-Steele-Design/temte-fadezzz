@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import locationImg from '../images/location.jpg'
 ---
 
@@ -10,9 +11,11 @@ import locationImg from '../images/location.jpg'
       rel="noopener noreferrer"
       class="group relative mb-4 block cursor-pointer"
     >
-      <img
-        src={locationImg.src}
+      <Image
+        src={locationImg}
         alt="Temte's Fades & Shaves location"
+        width={768}
+        quality={85}
         class="h-64 w-full object-cover object-[center_25%]"
       />
       <div class="absolute inset-0 bg-linear-to-t from-black/90 to-transparent"></div>
