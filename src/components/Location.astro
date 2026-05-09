@@ -1,21 +1,24 @@
 ---
-import { Image } from 'astro:assets'
-import locationImg from '../images/location.jpg'
+import { createReader } from '@keystatic/core/reader'
+import keystaticConfig from '../../keystatic.config'
+const reader = createReader(process.cwd(), keystaticConfig)
+const location = await reader.singletons.location.read()
+const locationImageSrc = location?.locationImage ? `/images/location/${location.locationImage}` : ''
 ---
 
 <section id="location" class="flex scroll-mt-16 flex-col px-4 pt-16 pb-8">
   <div data-reveal class="mx-auto w-full max-w-3xl">
     <a
-      href="https://maps.apple.com/?address=8030+Glen+Ln,+Suite+18,+Eden+Prairie,+55344"
+      href={location?.mapUrl ?? '#'}
       target="_blank"
       rel="noopener noreferrer"
       class="group relative mb-4 block cursor-pointer"
     >
-      <Image
-        src={locationImg}
+      <img
+        src={locationImageSrc}
         alt="Temte's Fades & Shaves location"
-        width={768}
-        quality={85}
+        width="768"
+        loading="lazy"
         class="h-64 w-full object-cover object-[center_25%]"
       />
       <div class="absolute inset-0 bg-linear-to-t from-black/90 to-transparent">
@@ -30,7 +33,7 @@ import locationImg from '../images/location.jpg'
         <h2 class="font-garamond text-4xl font-bold">Location</h2>
         <div class="flex w-full items-end justify-between">
           <p class="mt-1 text-base">
-            8030 Glen Ln, Suite 18, Eden Prairie, 55344
+            {location?.address}
           </p>
           <span
             class="ml-3 shrink-0 rounded-full border border-white/40 px-2.5 py-1 text-sm font-semibold tracking-wide text-white/90"
@@ -49,49 +52,20 @@ import locationImg from '../images/location.jpg'
         Hours
       </h3>
       <ul class="flex flex-col gap-3">
-        <li class="flex items-center justify-between">
-          <span class="font-medium">Monday</span>
-          <span class="text-neutral-400">Closed</span>
-        </li>
-        <li class="flex items-start justify-between">
-          <span class="font-medium">Tuesday</span>
-          <span class="flex flex-col items-end text-neutral-400">
-            <span>10:00 AM – 2:00 PM</span>
-            <span>2:30 PM – 6:00 PM</span>
-          </span>
-        </li>
-        <li class="flex items-start justify-between">
-          <span class="font-medium">Wednesday</span>
-          <span class="flex flex-col items-end text-neutral-400">
-            <span>10:00 AM – 2:00 PM</span>
-            <span>2:30 PM – 6:00 PM</span>
-          </span>
-        </li>
-        <li class="flex items-start justify-between">
-          <span class="font-medium">Thursday</span>
-          <span class="flex flex-col items-end text-neutral-400">
-            <span>10:00 AM – 2:00 PM</span>
-            <span>2:30 PM – 6:00 PM</span>
-          </span>
-        </li>
-        <li class="flex items-start justify-between">
-          <span class="font-medium">Friday</span>
-          <span class="flex flex-col items-end text-neutral-400">
-            <span>10:00 AM – 2:00 PM</span>
-            <span>2:30 PM – 6:00 PM</span>
-          </span>
-        </li>
-        <li class="flex items-start justify-between">
-          <span class="font-medium">Saturday</span>
-          <span class="flex flex-col items-end text-neutral-400">
-            <span>9:00 AM – 1:30 PM</span>
-            <span>2:00 PM – 5:00 PM</span>
-          </span>
-        </li>
-        <li class="flex items-center justify-between">
-          <span class="font-medium">Sunday</span>
-          <span class="text-neutral-400">Closed</span>
-        </li>
+        {(location?.hours ?? []).map((h) => (
+          <li class="flex items-start justify-between">
+            <span class="font-medium">{h.day}</span>
+            {h.isClosed ? (
+              <span class="text-neutral-400">Closed</span>
+            ) : (
+              <span class="flex flex-col items-end text-neutral-400">
+                {h.slots.map((slot) => (
+                  <span>{slot}</span>
+                ))}
+              </span>
+            )}
+          </li>
+        ))}
       </ul>
     </div>
   </div>

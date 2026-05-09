@@ -1,0 +1,35 @@
+locationImage: location.jpg
+address: 8030 Glen Ln, Suite 18, Eden Prairie, 55344
+mapUrl: "https://maps.apple.com/?address=8030+Glen+Ln,+Suite+18,+Eden+Prairie,+55344"
+hours:
+  - day: Monday
+    isClosed: true
+    slots: []
+  - day: Tuesday
+    isClosed: false
+    slots:
+      - 10:00 AM – 2:00 PM
+      - 2:30 PM – 6:00 PM
+  - day: Wednesday
+    isClosed: false
+    slots:
+      - 10:00 AM – 2:00 PM
+      - 2:30 PM – 6:00 PM
+  - day: Thursday
+    isClosed: false
+    slots:
+      - 10:00 AM – 2:00 PM
+      - 2:30 PM – 6:00 PM
+  - day: Friday
+    isClosed: false
+    slots:
+      - 10:00 AM – 2:00 PM
+      - 2:30 PM – 6:00 PM
+  - day: Saturday
+    isClosed: false
+    slots:
+      - 9:00 AM – 1:30 PM
+      - 2:00 PM – 5:00 PM
+  - day: Sunday
+    isClosed: true
+    slots: []

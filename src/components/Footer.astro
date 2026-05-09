@@ -1,10 +1,14 @@
 ---
 import SocialIcons from './SocialIcons.astro'
+import { createReader } from '@keystatic/core/reader'
+import keystaticConfig from '../../keystatic.config'
+const reader = createReader(process.cwd(), keystaticConfig)
+const settings = await reader.singletons.settings.read()
 ---
 
 <footer class="flex flex-col items-center p-8 gap-4">
   <div class="flex gap-6">
     <SocialIcons size={28} />
   </div>
-  <p class="font-inter text-xs font-light mb-8">&copy; 2026 TEMTE's Fades & Shaves</p>
+  <p class="font-inter text-xs font-light mb-8">{settings?.copyrightText}</p>
 </footer>

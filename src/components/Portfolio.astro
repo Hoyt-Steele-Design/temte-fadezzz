@@ -1,21 +1,13 @@
 ---
-import { Image } from 'astro:assets'
+import { createReader } from '@keystatic/core/reader'
+import keystaticConfig from '../../keystatic.config'
 
-import img1 from '../images/portfolio/IMG_4930.jpg'
-import img2 from '../images/portfolio/IMG_4829.jpg'
-import img3 from '../images/portfolio/IMG_4828.jpg'
-import img4 from '../images/portfolio/IMG_4420.jpg'
-import img5 from '../images/portfolio/IMG_4367.jpg'
-import img6 from '../images/portfolio/IMG_3984.jpg'
-
-const images = [
-  { src: img1, alt: 'Fade haircut with sharp lineup' },
-  { src: img2, alt: 'Detailed beard trim and shave' },
-  { src: img3, alt: 'Bald fade haircut' },
-  { src: img4, alt: 'Skin fade with design work' },
-  { src: img5, alt: 'Taper fade haircut' },
-  { src: img6, alt: 'Full service haircut and beard' },
-]
+const reader = createReader(process.cwd(), keystaticConfig)
+const portfolio = await reader.singletons.portfolio.read()
+const images = (portfolio?.images ?? []).map((img) => ({
+  image: img.image ? `/images/portfolio/${img.image}` : '',
+  alt: img.alt,
+}))
 
 const DURATION = 5
 const TOTAL = images.length * DURATION
@@ -30,12 +22,12 @@ const TOTAL = images.length * DURATION
   <!-- Mobile: crossfade slideshow -->
   <div data-reveal data-reveal-delay="100" class="portfolio-stage lg:hidden">
     {images.map((img, i) => (
-      <Image
-        src={img.src}
+      <img
+        src={img.image}
         alt={img.alt}
-        width={800}
-        height={1067}
-        quality={85}
+        width="800"
+        height="1067"
+        loading="lazy"
         class="portfolio-slide"
         style={`animation-delay: ${i * DURATION}s; animation-duration: ${TOTAL}s`}
       />
@@ -46,12 +38,12 @@ const TOTAL = images.length * DURATION
   <div data-reveal data-reveal-delay="100" class="portfolio-grid hidden lg:grid">
     {images.map((img) => (
       <div class="portfolio-grid-item">
-        <Image
-          src={img.src}
+        <img
+          src={img.image}
           alt={img.alt}
-          width={600}
-          height={800}
-          quality={85}
+          width="600"
+          height="800"
+          loading="lazy"
           class="portfolio-grid-img"
         />
       </div>

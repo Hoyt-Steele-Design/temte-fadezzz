@@ -1,21 +1,12 @@
 ---
-import data from '../data/services.json'
-
-type ServiceCategory = 'Haircuts' | 'Shaves' | 'Esthetician Work'
-
-interface ServiceGroup {
-  category: ServiceCategory
-  services: Service[]
-}
-
-interface Service {
-  name: string
-  description: string
-  price: string
-  duration: string
-}
-
-const serviceGroups = data.serviceGroups as ServiceGroup[]
+import { createReader } from '@keystatic/core/reader'
+import keystaticConfig from '../../keystatic.config'
+const reader = createReader(process.cwd(), keystaticConfig)
+const services = await reader.singletons.services.read()
+const serviceGroups = services?.serviceGroups ?? []
+const disclaimer = services?.disclaimer ?? ''
+const settings = await reader.singletons.settings.read()
+const bookingUrl = settings?.bookingUrl ?? ''
 ---
 
 <section id="services" class="scroll-mt-16 px-4 pt-16 pb-8">
@@ -25,8 +16,9 @@ const serviceGroups = data.serviceGroups as ServiceGroup[]
     <p
       class="font-inter mt-4 text-xs font-semibold tracking-widest text-neutral-500 uppercase"
     >
-      All services include wash, lineup &amp; styling
+      {disclaimer}
     </p>
+
   </div>
 
   <div class="mx-auto flex max-w-3xl flex-col gap-10 lg:flex-row lg:gap-6">
@@ -66,7 +58,7 @@ const serviceGroups = data.serviceGroups as ServiceGroup[]
 
   <div data-reveal class="mx-auto flex max-w-3xl w-full flex-col gap-3 mt-10 px-4">
     <a
-      href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
+      href={bookingUrl}
       target="_blank"
       rel="noopener noreferrer"
       class="btn btn-gold w-full px-6 py-4"

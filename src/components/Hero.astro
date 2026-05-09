@@ -1,18 +1,19 @@
 ---
-import { getImage } from 'astro:assets'
-import heroMobileImg from '../images/hero-mobile.jpg'
-import heroDesktopImg from '../images/hero-desktop.jpeg'
+import { createReader } from '@keystatic/core/reader'
+import keystaticConfig from '../../keystatic.config'
 import mobileSvg from '../assets/your-fade-logo-mobile.svg?raw'
 import desktopSvg from '../assets/your-fade-logo-desktop.svg?raw'
 
-const mobileImage = await getImage({ src: heroMobileImg })
-const desktopImage = await getImage({ src: heroDesktopImg })
+const reader = createReader(process.cwd(), keystaticConfig)
+const hero = await reader.singletons.hero.read()
+const bgMobile = hero?.backgroundImageMobile ? `/images/hero/${hero.backgroundImageMobile}` : ''
+const bgDesktop = hero?.backgroundImageDesktop ? `/images/hero/${hero.backgroundImageDesktop}` : ''
 ---
 
 <section
   id="home"
   class="hero relative overflow-hidden bg-cover bg-center flex items-center justify-center pb-16 lg:pb-0"
-  style={`--bg-mobile: url(${mobileImage.src}); --bg-desktop: url(${desktopImage.src})`}
+  style={`--bg-mobile: url(${bgMobile}); --bg-desktop: url(${bgDesktop})`}
 >
   <div
     class="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent to-black/10"
