@@ -60,6 +60,16 @@
       }
     }
 
+    #desktop-logo .x-gold {
+      text-shadow: 0px 2px 5px rgba(0,0,0,0.5), 0px 0px 8px rgba(236,200,78,0.35), 0px 0px 18px rgba(236,200,78,0.18);
+    }
+    #desktop-logo .fade-white {
+      text-shadow: 0px 2px 6px rgba(0,0,0,0.5), 0px 0px 10px rgba(255,255,255,0.12);
+    }
+    #desktop-logo .story-gold {
+      text-shadow: 0px 2px 6px rgba(0,0,0,0.5), 0px 0px 10px rgba(236,200,78,0.18);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       #desktop-logo .logo-piece {
         opacity: 1;
@@ -69,29 +79,33 @@
   </style>
   <defs>
     <filter id="desktop-white-glow" x="-30%" y="-50%" width="160%" height="200%">
-      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="1"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity="0.28"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#ffffff" flood-opacity="0.2"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity="0.2"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#ffffff" flood-opacity="0.14"/>
     </filter>
-    <filter id="desktop-gold-glow" x="-30%" y="-50%" width="160%" height="200%">
+    <filter id="desktop-story-glow" x="-30%" y="-50%" width="160%" height="200%">
       <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="1"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#DDBA52" flood-opacity="0.34"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#DDBA52" flood-opacity="0.16"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ECC84E" flood-opacity="0.34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#ECC84E" flood-opacity="0.16"/>
     </filter>
   </defs>
 
   <g class="logo-piece logo-fade">
-    <text x="646" y="155" text-anchor="end" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#000000" opacity="0.16">YOUR FADE</text>
-    <text x="644" y="153" text-anchor="end" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#ffffff" filter="url(#desktop-white-glow)">YOUR FADE</text>
+    <text x="646" y="155" text-anchor="end" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="560" letter-spacing="7" fill="#000000" opacity="0.16">YOUR FADE</text>
+    <g filter="url(#desktop-white-glow)">
+      <text x="644" y="153" text-anchor="end" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="560" letter-spacing="7" fill="#ffffff" class="fade-white">YOUR FADE</text>
+    </g>
   </g>
 
   <g class="logo-piece logo-x">
-    <text x="720" y="171" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="118" font-weight="600" font-style="italic" fill="#000000" opacity="0.18">X</text>
-    <text x="720" y="168" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="118" font-weight="600" font-style="italic" fill="#DDBA52" filter="url(#desktop-gold-glow)">X</text>
+    <text x="720" y="170" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="118" font-weight="515" font-style="italic" fill="#000000" opacity="0.26">X</text>
+    <text x="720" y="168" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="118" font-weight="515" font-style="italic" fill="#ECC84E" class="x-gold">X</text>
   </g>
 
   <g class="logo-piece logo-story">
-    <text x="808" y="155" text-anchor="start" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#000000" opacity="0.16">YOUR STORY</text>
-    <text x="806" y="153" text-anchor="start" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="500" letter-spacing="7" fill="#DDBA52" filter="url(#desktop-gold-glow)">YOUR STORY</text>
+    <text x="808" y="155" text-anchor="start" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="560" letter-spacing="7" fill="#000000" opacity="0.24">YOUR STORY</text>
+    <g filter="url(#desktop-story-glow)">
+      <text x="806" y="153" text-anchor="start" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="72" font-weight="560" letter-spacing="7" fill="#ECC84E" class="story-gold">YOUR STORY</text>
+    </g>
   </g>
 </svg>
