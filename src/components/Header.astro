@@ -103,8 +103,10 @@ const bookingUrl = settings?.bookingUrl ?? ''
     transition: color 0.7s ease;
   }
   .nav-link:hover {
-    color: #f0d060;
-    transition: color 0.2s ease;
+    background: linear-gradient(to right, #b8902a, #f0d060, #c8a840);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   /* Drawer — 75% width mobile drawer */
