@@ -106,14 +106,14 @@
   <!-- X -->
   <g class="logo-piece logo-x">
     <text x="342" y="445" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="515" font-style="italic" fill="#000000" opacity="0.26">X</text>
-    <text x="340" y="443" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="515" font-style="italic" fill="url(#mobile-gold-grad)" stroke="#ffd250" stroke-width="0.6" stroke-opacity="0.75" paint-order="stroke fill" class="x-gold">X</text>
+    <text x="340" y="443" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="154" font-weight="515" font-style="italic" fill="#e8c840" class="x-gold">X</text>
   </g>
 
   <!-- YOUR STORY — gold -->
   <g class="logo-piece logo-story">
     <text x="342" y="572" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#000000" opacity="0.24">YOUR STORY</text>
     <g filter="url(#mobile-gold-glow)">
-      <text x="340" y="570" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="url(#mobile-gold-grad)" stroke="#ffd250" stroke-width="0.6" stroke-opacity="0.75" paint-order="stroke fill" class="story-gold">YOUR STORY</text>
+      <text x="340" y="570" text-anchor="middle" font-family="'EB Garamond', Garamond, Baskerville, Georgia, serif" font-size="92" font-weight="560" letter-spacing="7" fill="#e8c840" class="story-gold">YOUR STORY</text>
     </g>
   </g>
 </svg>
