@@ -55,22 +55,22 @@ export default config({
     portfolio: singleton({
       label: "Portfolio Section",
       path: "src/content/portfolio",
-      schema: {
-        images: fields.array(
-          fields.object({
-            image: fields.image({
-              label: "Image",
-              directory: "public/images/portfolio",
-              publicPath: "/images/portfolio",
-            }),
-            alt: fields.text({ label: "Alt Text" }),
-          }),
-          {
-            label: "Portfolio Images",
-            itemLabel: (props) => props.fields.alt.value,
-          }
-        ),
-      },
+      schema: Object.fromEntries(
+        Array.from({ length: 6 }, (_, i) => [
+          `photo${i + 1}`,
+          fields.object(
+            {
+              image: fields.image({
+                label: "Image",
+                directory: "public/images/portfolio",
+                publicPath: "/images/portfolio",
+              }),
+              alt: fields.text({ label: "Alt Text" }),
+            },
+            { label: `Photo ${i + 1}` }
+          ),
+        ])
+      ),
     }),
     services: singleton({
       label: "Services Section",
