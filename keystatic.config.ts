@@ -2,7 +2,7 @@ import { config, singleton, fields } from '@keystatic/core'
 
 export default config({
   storage: {
-    kind: 'github',
+    kind: 'local',
     repo: 'hoyt-steele-design/temte-fadezzz',
     branchPrefix: 'content/',
   },
