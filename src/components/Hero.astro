@@ -8,6 +8,8 @@ const reader = createReader(process.cwd(), keystaticConfig)
 const hero = await reader.singletons.hero.read()
 const bgMobile = hero?.backgroundImageMobile ? `/images/hero/${hero.backgroundImageMobile}` : ''
 const bgDesktop = hero?.backgroundImageDesktop ? `/images/hero/${hero.backgroundImageDesktop}` : ''
+const settings = await reader.singletons.settings.read()
+const bookingUrl = settings?.bookingUrl ?? ''
 ---
 
 <section
@@ -30,7 +32,7 @@ const bgDesktop = hero?.backgroundImageDesktop ? `/images/hero/${hero.background
     </div>
     <div class="flex flex-col items-center gap-6 w-full px-8 lg:flex-row lg:gap-3 lg:justify-center lg:px-0">
       <a
-        href="https://booksy.com/en-us/936262_temtes-fades-shaves_barber-shop_24080_eden-prairie#ba_s=seo"
+        href={bookingUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-glass-gold lg:text-btn-lg w-full px-9 py-4.5 lg:w-1/3"
