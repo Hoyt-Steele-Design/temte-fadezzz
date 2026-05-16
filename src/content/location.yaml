@@ -5,6 +5,7 @@ hours:
     isClosed: true
     slots:
       - 7:00 AM - 6:00 PM
+      - testing!!
   - day: Tuesday
     isClosed: false
     slots:
