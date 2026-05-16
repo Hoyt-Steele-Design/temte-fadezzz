@@ -2,8 +2,8 @@ import { config, singleton, fields } from '@keystatic/core'
 
 export default config({
   storage: {
-    kind: 'local',
-    repo: 'hoyt-steele-design/temte-fadezzz',
+    kind: import.meta.env.DEV ? 'local' : 'github',
+    repo: 'Hoyt-Steele-Design/temte-fadezzz',
     branchPrefix: 'content/',
   },
   singletons: {

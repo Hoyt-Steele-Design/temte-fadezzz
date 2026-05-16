@@ -7,3 +7,15 @@
 
 [context.branch-deploy]
   command = "npm run build"
+
+[[redirects]]
+  from = "/api/keystatic/*"
+  to = "/.netlify/functions/ssr"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/keystatic/*"
+  to = "/.netlify/functions/ssr"
+  status = 200
+  force = true

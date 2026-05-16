@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-import keystatic from "@keystatic/astro";
 import netlify from "@astrojs/netlify";
 import react from "@astrojs/react";
 
@@ -8,7 +7,7 @@ import react from "@astrojs/react";
 export default defineConfig({
   output: "static",
   adapter: netlify(),
-  integrations: [react(), keystatic()],
+  integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
   },

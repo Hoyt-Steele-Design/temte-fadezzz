@@ -40,6 +40,6 @@ export default defineConfig(
 
   // Ignore build artifacts and generated files
   {
-    ignores: ["dist/", ".astro/", "node_modules/"],
+    ignores: ["dist/", ".astro/", ".netlify/", "node_modules/"],
   },
 );
