@@ -3,7 +3,12 @@ import { createReader } from '@keystatic/core/reader'
 import keystaticConfig from '../../keystatic.config'
 const reader = createReader(process.cwd(), keystaticConfig)
 const location = await reader.singletons.location.read()
-const locationImageSrc = location?.locationImage ? `/images/location/${location.locationImage}` : ''
+const locationImage = location?.locationImage?.trim()
+const locationImageSrc = locationImage
+  ? locationImage.startsWith('/')
+    ? locationImage
+    : `/images/location/${locationImage}`
+  : '/images/location/location.jpg'
 ---
 
 <section id="location" class="flex scroll-mt-16 flex-col px-4 pt-16 pb-8">
